@@ -1,0 +1,9 @@
+.onFront{
+    height: 100%;
+}
+.onBack{
+    display: none;
+}
+.onVissible{
+    opacity: 1;
+}
