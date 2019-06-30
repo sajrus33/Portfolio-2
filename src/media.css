@@ -19,6 +19,11 @@
   .h1 {
     font-size: 40px;
   }
+
+  :root {
+    --workMainWidth: 240px;
+    --workWidth: 120px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -27,6 +32,12 @@
   }
   .img--me--small {
     display: block;
+  }
+  .works__work {
+    display: none;
+  }
+  .works__work--main {
+    display: flex;
   }
 }
 @media only screen and (max-width: 480px) {

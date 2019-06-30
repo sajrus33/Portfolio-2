@@ -9,28 +9,31 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <link rel="stylesheet" href="public/index.css" />
   </head>
 
-  <body class="flexCol">
+  <body class="flexRow">
     <main class="wrapper--perspective flexCol noneTransition ">
       <div class="shadow"></div>
-      <!-- S1 -->
-      <div class="cover wrapper  flexCol ">
-        <header class="header flexRow">
-          <a href="" class="header__logo flexRow">
-            <img src="/public/img/logo.png" alt="destiny" class="logo__img" />
-            <p class="logo__p">imagine</p>
-          </a>
-          <button class="header__button ">hire me</button>
-          <div class="header__hamb flexCol">
-            <span class="hamb__span"></span>
-            <span class="hamb__span hamb__span--second"></span>
-            <span class="hamb__span"></span>
-          </div>
-        </header>
+      <header class="header flexRow">
+        <a href="" class="header__logo flexRow">
+          <img src="/public/img/logo.png" alt="destiny" class="logo__img" />
+          <p class="logo__p">imagine</p>
+        </a>
+        <button class="header__button ">hire me</button>
+        <div class="header__hamb flexCol">
+          <span class="hamb__span"></span>
+          <span class="hamb__span hamb__span--second"></span>
+          <span class="hamb__span"></span>
+        </div>
+      </header>
+        <!-- S1 -->
 
-        <section class="flexRow cover__section">
+      <div class="home cover wrapper  flexCol  displayNone">
+        <section class="flexRow cover__section ">
           <div class="flexCol">
             <h1 class="h1">
               Brian Wala<br />
@@ -93,9 +96,28 @@
       </div>
 
       <!-- S2 -->
-      <!-- <div class="works wrapper onFront flexRow">
+      <section class=" works wrapper flexCol ">
+        <section class="flexCol works__section">
+          <h2 class="h2">Selected work</h2>
+          <div class="works__slider flexRow">
+            <div class="works__arrow works__arrow--prev"><i class="fas fa-arrow-left works__ico"></i></div>
+            <div class="works__work flexCol" >
+            <div class="works__slide"><img src="/public/img/62062318_440267973438564_5098947214890237952_n.jpg" alt="" class="img--slide">  </div>
+            <p class="works__title">Flubmaster</p>
+            </div>
+            <div class="works__work works__work--main flexCol" >
+            <div class="works__slide works__slide--main"><img src="/public/img/62062318_440267973438564_5098947214890237952_n.jpg" alt="" class="img--slide">  </div>
+            <p class="works__title">Avangarde</p>
+            </div>
+            <div class="works__work flexCol" >
+            <div class="works__slide"><img src="/public/img/62062318_440267973438564_5098947214890237952_n.jpg" alt="" class="img--slide">  </div>
+            <p class="works__title">Tower Defence</p>
+            </div>
+            <div class="works__arrow works__arrow--next"><i class="fas fa-arrow-right works__ico"></i></div>
+          </div>
+        </section>
         
-      </div> -->
+      </section> 
     </main>
 
     <nav class="nav displayNone">

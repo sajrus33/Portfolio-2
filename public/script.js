@@ -6,6 +6,8 @@ const myDOM = {
   nav: document.querySelector(".nav"),
   navLinks: document.querySelectorAll(".nav__link"),
 
+  wrappers: document.querySelectorAll(".wrapper"),
+
   flag: {
     smallScreen: false
   },
@@ -32,6 +34,13 @@ const myDOM = {
           link.classList.remove("onMark");
         });
         link.classList.add("onMark");
+        myDOM.wrappers.forEach(wrapper => {
+          // console.log(link.innerText.toLowerCase());
+          wrapper.classList.add("displayNone");
+          if (link.innerText.toLowerCase() == wrapper.classList[0]) {
+            wrapper.classList.remove("displayNone");
+          }
+        });
         myDOM.hamburger.click();
       });
     });
