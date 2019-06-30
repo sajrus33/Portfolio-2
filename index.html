@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Portfolio2 WB</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="public/index.css" />
   </head>
 
-  <body class="flexRow">
-    <main class="wrapper--perspective noneTransition flexCol">
+  <body class="flexCol">
+    <main class="wrapper--perspective flexCol noneTransition ">
       <div class="shadow"></div>
-      <div class="cover wrapper onFront">
+      <!-- S1 -->
+      <div class="cover wrapper  flexCol ">
         <header class="header flexRow">
           <a href="" class="header__logo flexRow">
             <img src="/public/img/logo.png" alt="destiny" class="logo__img" />
             <p class="logo__p">imagine</p>
           </a>
-          <button class="header__button onVissible">hire me</button>
+          <button class="header__button ">hire me</button>
           <div class="header__hamb flexCol">
             <span class="hamb__span"></span>
             <span class="hamb__span hamb__span--second"></span>
@@ -25,11 +30,72 @@
           </div>
         </header>
 
-        <section class="flexRow">
-          <h1 class="h1">Brian Wala Frontend Developer</h1>
-          <img src="/public/img/cover.png" alt="" class="img--me" />
+        <section class="flexRow cover__section">
+          <div class="flexCol">
+            <h1 class="h1">
+              Brian Wala<br />
+              Frontend Developer
+            </h1>
+            <button class="cover__button">
+              hire me <span class="cover__cover--button"></span>
+            </button>
+          </div>
+
+          <img
+            src="/public/img/cover.png"
+            alt="Brian Wala photography"
+            class="img--me"
+          />
+          <img
+            src="/public/img/cover-small.png"
+            alt="Brian Wala photography"
+            class="img--me--small"
+          />
         </section>
+        <div class="cover__options flexRow">
+          <a
+            class="cover__option"
+            rel="”noopener”"
+            target="_blank"
+            href="https://sajrus33.github.io/Portfolio/"
+          >
+            <h3 class="h3">Old portfolio</h3>
+            <p class="cover__p">
+              My first portfolio. Made with HTML5/CSS3 + BEM + JS Vanilla.
+              Designe based on free template.
+            </p>
+          </a>
+          <a
+            class="cover__option"
+            rel="”noopener”"
+            target="_blank"
+            href="https://sajrus33.github.io/web-flubmaster/"
+          >
+            <h3 class="h3">flubmaster</h3>
+            <p class="cover__p">
+              Website Flubmaster. Design based on free template. HTML5/CSS3 +
+              BEM + JS Vanilla
+            </p>
+          </a>
+          <a
+            class="cover__option"
+            rel="”noopener”"
+            target="_blank"
+            href="https://sajrus33.github.io/game-memory-cards/"
+          >
+            <h3 class="h3">memory cards</h3>
+            <p class="cover__p">
+              My latest game and my own game engine. Technologies: JS Vanilla
+              OOP. Memory cards with two categories.
+            </p>
+          </a>
+        </div>
       </div>
+
+      <!-- S2 -->
+      <!-- <div class="works wrapper onFront flexRow">
+        
+      </div> -->
     </main>
 
     <nav class="nav displayNone">

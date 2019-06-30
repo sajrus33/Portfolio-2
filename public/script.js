@@ -6,15 +6,21 @@ const myDOM = {
   nav: document.querySelector(".nav"),
   navLinks: document.querySelectorAll(".nav__link"),
 
+  flag: {
+    smallScreen: false
+  },
+
   listen: () => {
     myDOM.hamburger.addEventListener("click", () => {
       // myDOM.wrapperPerspective.classList.toggle("offPerspective");
       myDOM.noneTransition.classList.remove("noneTransition");
+
       myDOM.nav.style.transform = "translateX(-50%)";
 
       if (window.innerWidth <= 768) {
+        myDOM.flag.smallScreen = true;
         myDOM.wrapperPerspective.classList.toggle("displayNone");
-        myDOM.nav.style.transform = "none";
+        myDOM.nav.style.transform = "translateX(0)";
       }
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");

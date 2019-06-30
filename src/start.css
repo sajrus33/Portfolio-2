@@ -21,6 +21,9 @@ ol {
 
 /* VARIABLES */
 :root {
+  /* colors */
+  --gray: #282828;
+  --blue: #0f33ff;
   /* start */
   --wrapperWidth: 90%;
 
@@ -46,6 +49,8 @@ ol {
 .wrapper {
   width: 90%;
   width: var(--wrapperWidth);
+  min-height: 100%;
+  overflow: hidden;
 }
 
 /* for all */
@@ -66,7 +71,7 @@ body {
 
 @keyframes perspectiveOff {
   0% {
-    transform: rotateY(10deg) translateX(-50%) translateZ(-1800px);
+    transform: rotateY(10deg) translateX(-25%) translateZ(-1800px);
   }
   100% {
     transform: none;
@@ -100,6 +105,7 @@ body {
 
 .nav__link {
   position: relative;
+  line-height: 20vh;
 }
 .onMark {
 }

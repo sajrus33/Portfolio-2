@@ -1,5 +1,6 @@
 .cover {
   position: relative;
+  justify-content: center;
 }
 .header {
   position: absolute;
@@ -47,4 +48,93 @@
 .hamb__span--second {
   width: 16px;
   margin: 5px 0px;
+}
+/* section */
+.cover__section {
+  margin-top: 70px;
+  overflow: hidden;
+  border-bottom: 2px #282828 solid;
+}
+.h1 {
+  font-size: 55px;
+  margin-left: 15px;
+}
+.img--me {
+  display: block;
+}
+.img--me--small {
+  display: none;
+}
+
+.cover__button {
+  align-self: flex-start;
+  justify-self: flex-end;
+
+  margin-left: 1em;
+
+  position: relative;
+  box-sizing: content-box;
+  padding: 5px 17px 5px 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  z-index: 1;
+}
+.cover__button::before {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 10px;
+  height: 1px;
+  background-color: #fff;
+}
+.cover__button::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 5px;
+  height: 5px;
+  border: 1px white solid;
+  border-left: none;
+  border-bottom: none;
+}
+.cover__button:hover .cover__cover--button {
+  width: 100%;
+}
+.cover__cover--button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-color: var(--blue);
+  z-index: -1;
+  transition: 0.2s ease-in;
+}
+.cover__options {
+  /* flex-grow: 1; */
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.cover__option {
+  color: var(--gray);
+  transition: 0.2s ease-in;
+  margin-left: 15px;
+
+  max-width: 250px;
+}
+.h3 {
+  margin: 1em 0;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.cover__option:hover {
+  color: white;
 }
