@@ -1,63 +1,115 @@
 /* RESET */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat",sans-serif;
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-button, a{
-    display: block;
-    cursor: pointer;
-    border:none;
-    text-decoration: none;
+button,
+a {
+  display: block;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+ul,
+ol {
+  list-style: none;
 }
 
 /* VARIABLES */
-:root{
-    /* start */
-    --wrapperWidth: 90%;
+:root {
+  /* start */
+  --wrapperWidth: 90%;
 
-    /* header */
-    --h1Size: 4em;
-
+  /* header */
+  --h1Size: 4em;
 }
 
 /* CONST CLASSES */
-.flexCol{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.flexRow{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.wrapper{
-    width: 90%;
-    width: var(--wrapperWidth);
+.wrapper {
+  width: 90%;
+  width: var(--wrapperWidth);
 }
 
 /* for all */
-body{
-    background-color: #000;
-    
+body {
+  background-color: #000;
+  color: white;
+  perspective: 1000px;
 }
-.wrapper--perspective{
-    height: 100vh;
-    width: 100%;
+.wrapper--perspective {
+  height: 100vh;
+  width: 100%;
+  outline: 30px solid #0f33ff;
+  animation: 0.4s perspectiveOff forwards;
+}
+.noneTransition {
+  animation: none;
 }
 
+@keyframes perspectiveOff {
+  0% {
+    transform: rotateY(10deg) translateX(-50%) translateZ(-1800px);
+  }
+  100% {
+    transform: none;
+  }
+}
 
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+}
 
+.nav {
+  height: 100%;
+  width: 35%;
+  min-width: 300px;
 
+  color: white;
+  font-size: 55px;
+  font-weight: 900;
+  /* transform-style: preserve-3d; */
+  white-space: nowrap;
+  text-transform: capitalize;
+  text-align: center;
 
+  transform: translateX(-50%);
+}
 
-
+.nav__link {
+  position: relative;
+}
+.onMark {
+}
+.onMark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 15px;
+  background-color: #0f33ff;
+}

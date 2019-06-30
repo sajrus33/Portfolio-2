@@ -1,9 +1,23 @@
-.onFront{
-    height: 100%;
+.onFront {
+  height: 100%;
 }
-.onBack{
-    display: none;
+.displayNone {
+  display: none;
 }
-.onVissible{
-    opacity: 1;
+.onVissible {
+  opacity: 1;
+}
+
+.onPerspective {
+  animation: 0.4s perspectiveOn forwards;
+}
+
+@keyframes perspectiveOn {
+  100% {
+    transform: rotateY(10deg) translateX(-50%) translateZ(-1800px);
+  }
+}
+
+@media only screen and (max-device-height: 767px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
 }
