@@ -1,0 +1,31 @@
+.skills__section {
+  height: 100%;
+  width: 100%;
+
+  /* justify-content: space-between; */
+}
+.skills__h3 {
+  margin: none;
+}
+.skills__wrapper {
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  justify-content: space-around;
+  align-items: center;
+}
+.skills__skill {
+  box-sizing: content-box;
+  margin-top: 1%;
+  width: 100px;
+  /* height: 50px; */
+  /* border: 2px solid white; */
+  /* background-color: #fff; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills__ico {
+  font-size: 50px;
+}
