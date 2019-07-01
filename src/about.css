@@ -1,0 +1,50 @@
+.about__h2 {
+  font-size: 68px;
+}
+.about__button:hover::before,
+.about__button:hover::after {
+  right: 0px;
+}
+.img--about {
+  margin: auto;
+}
+.about__options {
+  align-self: flex-start;
+
+  border: none;
+  max-width: 600px;
+}
+.about__option {
+  position: relative;
+  width: 150px;
+  height: 75px;
+  text-decoration: none;
+  color: #fff;
+  border: 10px solid #0f33ff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.about__school {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+}
+.about__school--first {
+  background-image: url("/public/img/lo1.jpeg");
+}
+
+.about__option:hover .about__title {
+  bottom: -25px;
+}
+.about__title {
+  position: absolute;
+  font-size: 15px;
+  bottom: -19px;
+  left: 10px;
+  transition: 0.2s ease-in;
+}
