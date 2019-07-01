@@ -1,3 +1,13 @@
+.about__wrapper {
+  /* width: 100%; */
+  height: 100%;
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
+}
+.about__section {
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
+}
 .about__h2 {
   font-size: 68px;
 }
@@ -10,6 +20,7 @@
 }
 .about__options {
   align-self: flex-start;
+  flex-wrap: wrap;
 
   border: none;
   max-width: 600px;
@@ -26,6 +37,7 @@
   background-repeat: no-repeat;
   margin-left: 0;
   margin-right: auto;
+  margin-bottom: 15px;
 }
 
 .about__school {
@@ -33,13 +45,19 @@
   height: 100%;
   position: relative;
   background-size: cover;
+  background-position: center;
 }
 .about__school--first {
   background-image: url("/public/img/lo1.jpeg");
 }
-
+.about__school--second {
+  background-image: url("/public/img/po.jpg");
+}
+.about__school--thirt {
+  background-image: url("/public/img/pś.png");
+}
 .about__option:hover .about__title {
-  bottom: -25px;
+  bottom: -26px;
 }
 .about__title {
   position: absolute;
