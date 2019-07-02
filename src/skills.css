@@ -23,9 +23,16 @@
   /* background-color: #fff; */
   /* text-align: center; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .skills__ico {
   font-size: 50px;
+}
+.skills__star {
+  font-size: 25px;
+  background: -webkit-linear-gradient(top, #8f6b29, #fde08d, #df9f28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
