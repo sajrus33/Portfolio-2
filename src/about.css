@@ -48,13 +48,13 @@
   background-position: center;
 }
 .about__school--first {
-  background-image: url("/public/img/lo1.jpeg");
+  background-image: url("public/img/lo1.jpeg");
 }
 .about__school--second {
-  background-image: url("/public/img/po.jpg");
+  background-image: url("public/img/po.jpg");
 }
 .about__school--thirt {
-  background-image: url("/public/img/pś.png");
+  background-image: url("public/img/pś.png");
 }
 .about__option:hover .about__title {
   bottom: -26px;
