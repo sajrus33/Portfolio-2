@@ -31,6 +31,11 @@
   overflow: hidden;
 
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .works__slide--main {
   height: var(--workMainWidth);
