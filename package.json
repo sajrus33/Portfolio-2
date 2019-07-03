@@ -1,7 +1,6 @@
 {
-  "name": "Portfolio-2",
+  "name": "portfolio-2",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^4.0.2",
@@ -15,5 +14,14 @@
   },
   "keywords": [],
   "author": "yo",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajrus33/Portfolio-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sajrus33/Portfolio-2/issues"
+  },
+  "homepage": "https://github.com/sajrus33/Portfolio-2#readme",
+  "description": ""
 }

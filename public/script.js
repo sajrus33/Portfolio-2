@@ -1,3 +1,4 @@
+"ue strict";
 const worksSrc = [
   "public/img/works/web-flubmaster.png",
   "public/img/works/web-portfolio.png",
@@ -9,6 +10,18 @@ const worksSrc = [
   "public/img/works/game-tower.png",
   "public/img/works/lib-circle.png"
 ];
+const worksTitle = [
+  "flubmaster",
+  "portfolio",
+  "escape",
+  "maps",
+  "todo",
+  "cards",
+  "memory",
+  "tower",
+  "circle"
+];
+
 const myDOM = {
   wrapperPerspective: document.querySelector(".wrapper--perspective"),
   noneTransition: document.querySelector(".noneTransition"),
@@ -20,6 +33,8 @@ const myDOM = {
   wrappers: document.querySelectorAll(".wrapper"),
 
   worksImg: document.querySelectorAll(".img--slide"),
+  worksTitle: document.querySelectorAll(".works__title"),
+
   worksNextBtn: document.querySelector(".works__arrow--next"),
   worksPrevBtn: document.querySelector(".works__arrow--prev"),
 
@@ -31,21 +46,51 @@ const myDOM = {
 
   loadWorks: (way = 0) => {
     myDOM.actualWork += way;
-
-    if (way) {
-      // const Work = myDOM.actualWork + way;
-      // const firstWork = myDOM.actualWork + way;
-      // const lastI = workSrc.length - 1;
-      // if (firstWork < 0) {
-      //   myDOM.actualWork = lastI;
-      // } else if ((firstWork + 2) >= lastI) {
-      //   myDOM.actualWork = ;
-      // }
+    const actual = myDOM.actualWork;
+    const lastI = worksSrc.length - 1;
+    let first = myDOM.actualWork,
+      second = myDOM.actualWork + 1,
+      thirt = myDOM.actualWork + 2;
+    if (thirt > lastI) {
+      thirt = 0;
+      if (second == lastI + 1) {
+        thirt = 1;
+        second = 0;
+      } else if (first == lastI + 1) {
+        myDOM.actualWork = 0;
+        first = myDOM.actualWork;
+        second = myDOM.actualWork + 1;
+        thirt = myDOM.actualWork + 2;
+      }
+    } else if (actual < 0) {
+      if (actual == -1) {
+        first = lastI;
+        second = 0;
+        thirt = 1;
+      } else if (actual == -2) {
+        first = lastI - 1;
+        second = lastI;
+        thirt = 0;
+      } else if (actual <= -3) {
+        myDOM.actualWork = lastI - 2;
+        first = myDOM.actualWork;
+        second = myDOM.actualWork + 1;
+        thirt = myDOM.actualWork + 2;
+      }
     }
-    myDOM.worksImg.forEach((workImg, index) => {
-      console.log("work src work");
-      workImg.src = worksSrc[myDOM.actualWork + index];
-    });
+    console.log(first);
+
+    myDOM.worksImg[0].src = worksSrc[first];
+    myDOM.worksImg[1].src = worksSrc[second];
+    myDOM.worksImg[2].src = worksSrc[thirt];
+    myDOM.worksTitle[0].innerText = worksTitle[first];
+    myDOM.worksTitle[1].innerText = worksTitle[second];
+    myDOM.worksTitle[2].innerText = worksTitle[thirt];
+
+    // .forEach((workImg, index) => {
+    //   console.log("work src work");
+    //   workImg.src = worksSrc[myDOM.actualWork + index];
+    // });
   },
 
   listen: () => {
