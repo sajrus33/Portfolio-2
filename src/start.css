@@ -32,7 +32,10 @@ ol {
 
   /* works */
   --workMainWidth: 300px;
-  --workWidth: 150px;
+  --workWidth: calc(var(--workMainWidth) / 2);
+
+  /* skills  */
+  --skillSize: 50px;
 }
 
 /* CONST CLASSES */
@@ -52,11 +55,9 @@ ol {
 
 .wrapper {
   position: relative;
-
   width: 90%;
   width: var(--wrapperWidth);
   height: 100%;
-  overflow: hidden;
 }
 
 /* for all */
@@ -70,14 +71,16 @@ body {
   width: 100%;
   outline: 30px solid #0f33ff;
   animation: 0.4s perspectiveOff forwards;
+  overflow: hidden;
 }
+
 .noneTransition {
   animation: none;
 }
 
 @keyframes perspectiveOff {
   0% {
-    transform: rotateY(10deg) translateX(-25%) translateZ(-1800px);
+    transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
   }
   100% {
     transform: none;
@@ -162,7 +165,10 @@ body {
 .nav__link {
   position: relative;
   line-height: 20vh;
+  width: auto;
+  /* animation: goInRight 0.2s ease-in forwards; */
 }
+
 .onMark {
 }
 .onMark::before {

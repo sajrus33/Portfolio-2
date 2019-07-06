@@ -1,8 +1,50 @@
 .displayNone {
   display: none;
 }
-.onVissible {
+.fadeInOut {
+  animation: fadeInOut 0.4s ease-in forwards;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeOut {
   opacity: 1;
+  animation: fadeOut 0.4s ease-out forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.goInRight {
+  /* transform: translateX(50vw);
+  opacity: 0; */
+  animation: goInRight 0.2s ease-in forwards;
+}
+@keyframes goInRight {
+  0% {
+    transform: translateX(50vw);
+    opacity: 0;
+  }
+  /* 40% {
+    opacity: 0;
+  } */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .onPerspective {
@@ -11,7 +53,7 @@
 
 @keyframes perspectiveOn {
   100% {
-    transform: rotateY(10deg) translateX(-25%) translateZ(-1800px);
+    transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
   }
 }
 
@@ -48,5 +90,10 @@
 @media only screen and (max-height: 480px) {
   .h1 {
     font-size: 29px;
+  }
+}
+@media only screen and (max-height: 320px) {
+  :root {
+    --workMainWidth: 200px;
   }
 }

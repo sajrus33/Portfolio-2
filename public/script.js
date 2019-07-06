@@ -32,6 +32,7 @@ const myDOM = {
 
   wrappers: document.querySelectorAll(".wrapper"),
 
+  worksWork: document.querySelectorAll(".works__work"),
   worksImg: document.querySelectorAll(".img--slide"),
   worksTitle: document.querySelectorAll(".works__title"),
 
@@ -45,52 +46,57 @@ const myDOM = {
   actualWork: 0,
 
   loadWorks: (way = 0) => {
+    myDOM.worksWork.forEach(work => {
+      work.classList.remove("fadeInOut");
+
+      work.classList.add("fadeInOut");
+      setTimeout(() => {
+        work.classList.remove("fadeInOut");
+      }, 500);
+    });
     myDOM.actualWork += way;
     const actual = myDOM.actualWork;
     const lastI = worksSrc.length - 1;
-    let first = myDOM.actualWork,
-      second = myDOM.actualWork + 1,
-      thirt = myDOM.actualWork + 2;
-    if (thirt > lastI) {
-      thirt = 0;
-      if (second == lastI + 1) {
-        thirt = 1;
-        second = 0;
-      } else if (first == lastI + 1) {
+    let worksNew = [];
+
+    const stdChange = () => {
+      for (let i = 0; i < 3; i++) {
+        // console.log("kolejne", myDOM.actualWork + i);
+        worksNew[i] = myDOM.actualWork + i;
+      }
+    };
+    stdChange();
+
+    if (worksNew[2] > lastI) {
+      worksNew[2] = 0;
+      if (worksNew[1] == lastI + 1) {
+        worksNew[2] = 1;
+        worksNew[1] = 0;
+      } else if (worksNew[0] == lastI + 1) {
         myDOM.actualWork = 0;
-        first = myDOM.actualWork;
-        second = myDOM.actualWork + 1;
-        thirt = myDOM.actualWork + 2;
+        stdChange();
       }
     } else if (actual < 0) {
       if (actual == -1) {
-        first = lastI;
-        second = 0;
-        thirt = 1;
+        worksNew[0] = lastI;
+        worksNew[1] = 0;
+        worksNew[2] = 1;
       } else if (actual == -2) {
-        first = lastI - 1;
-        second = lastI;
-        thirt = 0;
+        worksNew[0] = lastI - 1;
+        worksNew[1] = lastI;
+        worksNew[2] = 0;
       } else if (actual <= -3) {
         myDOM.actualWork = lastI - 2;
-        first = myDOM.actualWork;
-        second = myDOM.actualWork + 1;
-        thirt = myDOM.actualWork + 2;
+        stdChange();
       }
     }
-    console.log(first);
-
-    myDOM.worksImg[0].src = worksSrc[first];
-    myDOM.worksImg[1].src = worksSrc[second];
-    myDOM.worksImg[2].src = worksSrc[thirt];
-    myDOM.worksTitle[0].innerText = worksTitle[first];
-    myDOM.worksTitle[1].innerText = worksTitle[second];
-    myDOM.worksTitle[2].innerText = worksTitle[thirt];
-
-    // .forEach((workImg, index) => {
-    //   console.log("work src work");
-    //   workImg.src = worksSrc[myDOM.actualWork + index];
-    // });
+    worksNew.forEach((workNew, i) => {
+      myDOM.worksImg[i].src = worksSrc[workNew];
+      myDOM.worksTitle[i].innerText = worksTitle[workNew];
+      // myDOM.worksWork[i].classList.remove("fadeOut");
+      // myDOM.worksWork[i].classList.remove("fadeIn");
+      // myDOM.worksWork[i].classList.add("fadeIn");
+    });
   },
 
   listen: () => {
@@ -107,7 +113,18 @@ const myDOM = {
       }
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");
+      myDOM.navLinks.forEach((link, i) => {
+        const time = Number(String(i + 1) + "00");
+        const linkN = link;
+        console.log(typeof time);
+        setTimeout(() => {
+          console.log(link);
+        }, time);
+      });
+      // myDOM.nav.classList.toggle("goInRight");
     });
+
+    //
 
     myDOM.navLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -126,6 +143,8 @@ const myDOM = {
       });
     });
 
+    //
+
     myDOM.worksPrevBtn.addEventListener("click", () => {
       myDOM.loadWorks(-1);
     });
@@ -138,6 +157,9 @@ const myDOM = {
 
 const init = () => {
   myDOM.listen();
+  worksSrc.forEach(src => {
+    myDOM.worksImg[0].src = src;
+  });
   myDOM.loadWorks();
 };
 window.onload = init;

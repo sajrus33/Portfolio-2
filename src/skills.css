@@ -29,6 +29,7 @@
 }
 .skills__ico {
   font-size: 50px;
+  font-size: var(--skillSize);
 }
 .skills__star {
   font-size: 25px;
