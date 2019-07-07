@@ -70,11 +70,17 @@
 }
 .cover__options {
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 15px;
   border-top: 2px solid var(--gray);
+
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
 }
+
 .cover__option {
   color: var(--gray);
   transition: 0.2s ease-in;

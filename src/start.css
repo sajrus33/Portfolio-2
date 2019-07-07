@@ -36,6 +36,31 @@ ol {
 
   /* skills  */
   --skillSize: 50px;
+  --skillWidth: 250px;
+  --skillHeight: 100px;
+  /* skills colors */
+  --nodeColor: #3C873A;
+  --jsColor: #F0DB4F;
+  --dbColor: #4DB33D;
+
+  --reactColor: #61DBFB;
+  --htmlColor: #e34c26;
+  --cssColor: #264de4;
+
+  --npmColor: #cb3837;
+  --gulpColor: #d34a47;
+  --gitColor: #F4CBB2;
+}
+
+::-webkit-scrollbar{
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--blue);
+  border-radius: 15px;
+}
+::-webkit-scrollbar-corner{
+  background-color: #000;
 }
 
 /* CONST CLASSES */

@@ -1,16 +1,16 @@
 .displayNone {
   display: none;
 }
-.fadeInOut {
-  animation: fadeInOut 0.4s ease-in forwards;
+.fadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
 }
-@keyframes fadeInOut {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  50% {
+  /* 50% {
     opacity: 0;
-  }
+  } */
   100% {
     opacity: 1;
   }
@@ -56,7 +56,11 @@
     transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
   }
 }
-
+@media only screen and (max-width: 900px) {
+  :root{
+    --skillWidth: 200px;
+  }
+}
 @media only screen and (max-width: 900px) {
   .h1 {
     font-size: 40px;
@@ -65,10 +69,15 @@
   :root {
     --workMainWidth: 240px;
     --workWidth: 120px;
+
+    --skillSize: 40px;
+    --skillWidth: 150px;
+    --skillHeight: 50px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+
   .img--me {
     display: none;
   }
@@ -86,10 +95,19 @@
   .img--me--small {
     display: none;
   }
+  
 }
+
 @media only screen and (max-height: 480px) {
   .h1 {
     font-size: 29px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  :root {
+    --skillWidth: 100px;
+    --skillSize: 33px;
   }
 }
 @media only screen and (max-height: 320px) {

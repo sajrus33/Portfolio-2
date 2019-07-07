@@ -47,11 +47,11 @@ const myDOM = {
 
   loadWorks: (way = 0) => {
     myDOM.worksWork.forEach(work => {
-      work.classList.remove("fadeInOut");
+      work.classList.remove("fadeIn");
 
-      work.classList.add("fadeInOut");
+      work.classList.add("fadeIn");
       setTimeout(() => {
-        work.classList.remove("fadeInOut");
+        work.classList.remove("fadeIn");
       }, 500);
     });
     myDOM.actualWork += way;
@@ -93,9 +93,6 @@ const myDOM = {
     worksNew.forEach((workNew, i) => {
       myDOM.worksImg[i].src = worksSrc[workNew];
       myDOM.worksTitle[i].innerText = worksTitle[workNew];
-      // myDOM.worksWork[i].classList.remove("fadeOut");
-      // myDOM.worksWork[i].classList.remove("fadeIn");
-      // myDOM.worksWork[i].classList.add("fadeIn");
     });
   },
 

@@ -1,274 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Portfolio2 WB</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="public/index.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Portfolio2 WB</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-  <body class="flexRow">
-    <main class="wrapper--perspective flexCol noneTransition ">
-      <div class="shadow"></div>
-      <header class="header flexRow">
-        <a href="" class="header__logo flexRow">
-          <img src="public/img/logo.png" alt="destiny" class="logo__img" />
-          <p class="logo__p">imagine</p>
-        </a>
-        <button class="header__button ">hire me</button>
-        <div class="header__hamb flexCol">
-          <span class="hamb__span"></span>
-          <span class="hamb__span hamb__span--second"></span>
-          <span class="hamb__span"></span>
+  <link rel="stylesheet" href="public/index.css" />
+</head>
+
+<body class="flexRow">
+  <main class="wrapper--perspective flexCol noneTransition ">
+    <div class="shadow"></div>
+    <header class="header flexRow">
+      <a href="" class="header__logo flexRow">
+        <img src="public/img/logo.png" alt="destiny" class="logo__img" />
+        <p class="logo__p">imagine</p>
+      </a>
+      <button class="header__button ">hire me</button>
+      <div class="header__hamb flexCol">
+        <span class="hamb__span"></span>
+        <span class="hamb__span hamb__span--second"></span>
+        <span class="hamb__span"></span>
+      </div>
+    </header>
+
+    <!-- S1 -->
+
+    <div class="home cover wrapper  flexCol displayNone">
+      <section class="flexRow cover__section ">
+        <div class="flexCol">
+          <h1 class="h1">
+            Brian Wala<br />
+            Frontend Developer
+          </h1>
+          <button class="cover__button">
+            hire me <span class="cover__cover--button"></span>
+          </button>
         </div>
-      </header>
 
-      <!-- S1 -->
+        <img src="public/img/cover.png" alt="Brian Wala photography" class="img--me" />
+        <img src="public/img/cover-small.png" alt="Brian Wala photography" class="img--me--small" />
+      </section>
+      <div class="cover__options flexRow">
+        <a class="cover__option" rel="”noopener”" target="_blank" href="https://sajrus33.github.io/Portfolio/">
+          <h4 class="h4">Old portfolio</h4>
+          <p class="cover__p">
+            My first portfolio. Made with HTML5/CSS3 + BEM + JS Vanilla.
+            Designe based on free template.
+          </p>
+        </a>
+        <a class="cover__option" rel="”noopener”" target="_blank" href="https://sajrus33.github.io/web-flubmaster/">
+          <h4 class="h4">flubmaster</h4>
+          <p class="cover__p">
+            Website Flubmaster. Design based on free template. HTML5/CSS3 +
+            BEM + JS Vanilla
+          </p>
+        </a>
+        <a class="cover__option" rel="”noopener”" target="_blank" href="https://sajrus33.github.io/game-memory-cards/">
+          <h4 class="h4">memory cards</h4>
+          <p class="cover__p">
+            My latest game and my own game engine. Technologies: JS Vanilla
+            OOP. Memory cards with two categories.
+          </p>
+        </a>
+      </div>
+    </div>
 
-      <div class="home cover wrapper  flexCol displayNone">
+    <!-- S2 -->
+
+    <section class="works wrapper flexCol displayNone">
+      <section class="flexCol works__section">
+        <h3 class="h3">Selected work</h3>
+        <div class="works__slider flexRow">
+          <div class="works__arrow works__arrow--prev"><i class="fas fa-arrow-left works__ico"></i></div>
+          <div class="works__work flexCol">
+            <div class="works__slide"><img src="public/img/works/web--flubmaster.png" alt="" class="img--slide"> </div>
+            <p class="works__title">Flubmaster</p>
+          </div>
+          <div class="works__work works__work--main flexCol">
+            <div class="works__slide works__slide--main"><img src="public/img/works/web-avangarde.png" alt=""
+                class="img--slide"> </div>
+            <p class="works__title">Avangarde</p>
+          </div>
+          <div class="works__work flexCol">
+            <div class="works__slide"><img src="public/img/works/game--tower.png" alt="" class="img--slide"> </div>
+            <p class="works__title">Tower Defence</p>
+          </div>
+          <div class="works__arrow works__arrow--next"><i class="fas fa-arrow-right works__ico"></i></div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- S3 -->
+
+    <div class="about cover wrapper  flexCol displayNone">
+      <div class="flexCol about__wrapper">
         <section class="flexRow cover__section ">
           <div class="flexCol">
-            <h1 class="h1">
-              Brian Wala<br />
-              Frontend Developer
-            </h1>
-            <button class="cover__button">
-              hire me <span class="cover__cover--button"></span>
-            </button>
+            <h2 class="h1 about__h2">
+              About<br>
+              Me.<br>
+              My
+              School.
+            </h2>
+            <a href="https://github.com/sajrus33" rel="”noopener”" target="_blank" class="cover__button about__button">
+              Github
+            </a>
           </div>
 
-          <img
-            src="public/img/cover.png"
-            alt="Brian Wala photography"
-            class="img--me"
-          />
-          <img
-            src="public/img/cover-small.png"
-            alt="Brian Wala photography"
-            class="img--me--small"
-          />
+          <img src="public/img/about.png" alt="Brian Wala photography" class="img--me img--about" />
+          <img src="public/img/about-small.png" alt="photography of Brian Wala" class="img--me--small img--about" />
         </section>
-        <div class="cover__options flexRow">
-          <a
-            class="cover__option"
-            rel="”noopener”"
-            target="_blank"
-            href="https://sajrus33.github.io/Portfolio/"
-          >
-            <h4 class="h4">Old portfolio</h4>
-            <p class="cover__p">
-              My first portfolio. Made with HTML5/CSS3 + BEM + JS Vanilla.
-              Designe based on free template.
-            </p>
+        <div class="cover__options about__options flexRow">
+          <a class="cover__option about__option" rel="”noopener”" target="_blank" href="http://www.lo1-wodzislaw.pl/"
+            aria-label="lo 1 wodzislaw">
+            <div class="about__school about__school--first">
+              <h4 class="about__title">
+                LO 1
+              </h4>
+            </div>
           </a>
-          <a
-            class="cover__option"
-            rel="”noopener”"
-            target="_blank"
-            href="https://sajrus33.github.io/web-flubmaster/"
-          >
-            <h4 class="h4">flubmaster</h4>
-            <p class="cover__p">
-              Website Flubmaster. Design based on free template. HTML5/CSS3 +
-              BEM + JS Vanilla
-            </p>
+          <a class="cover__option about__option" rel="”noopener”" target="_blank" aria-label="po opole"
+            href="https://www.po.opole.pl/">
+            <div class="about__school about__school--second">
+
+              <h4 class="about__title">
+                PO Opole
+              </h4>
+            </div>
           </a>
-          <a
-            class="cover__option"
-            rel="”noopener”"
-            target="_blank"
-            href="https://sajrus33.github.io/game-memory-cards/"
-          >
-            <h4 class="h4">memory cards</h4>
-            <p class="cover__p">
-              My latest game and my own game engine. Technologies: JS Vanilla
-              OOP. Memory cards with two categories.
-            </p>
+          <a class="cover__option about__option" rel="”noopener”" target="_blank" aria-label="pś gliwice"
+            href="https://www.polsl.pl/">
+            <div class="about__school about__school--thirt">
+              <h4 class="about__title">
+                PŚ Gliwice
+              </h4>
+            </div>
           </a>
         </div>
       </div>
+    </div>
 
-      <!-- S2 -->
+    <!-- S4 -->
 
-      <section class=" works wrapper flexCol ">
-        <section class="flexCol works__section">
-          <h3 class="h3">Selected work</h3>
-          <div class="works__slider flexRow">
-            <div class="works__arrow works__arrow--prev"><i class="fas fa-arrow-left works__ico"></i></div>
-            <div class="works__work flexCol" >
-            <div class="works__slide"><img src="public/img/works/web--flubmaster.png" alt="" class="img--slide">  </div>
-            <p class="works__title">Flubmaster</p>
-            </div>
-            <div class="works__work works__work--main flexCol" >
-            <div class="works__slide works__slide--main"><img src="public/img/works/web-avangarde.png" alt="" class="img--slide">  </div>
-            <p class="works__title">Avangarde</p>
-            </div>
-            <div class="works__work flexCol" >
-            <div class="works__slide"><img src="public/img/works/game--tower.png" alt="" class="img--slide">  </div>
-            <p class="works__title">Tower Defence</p>
-            </div>
-            <div class="works__arrow works__arrow--next"><i class="fas fa-arrow-right works__ico"></i></div>
+    <section class="skills wrapper flexCol ">
+      <section class="flexCol skills__section">
+        <h3 class="h3 skills__h3">My skills</h3>
+        <p class="skills__legend">
+          <i class="fas fa-star skills__star"></i> 1 Year,&nbsp;&nbsp;&nbsp;
+          <i class="fas fa-star skills__star skills__star--half"></i>Up to half year
+        </p>
+        <div class="flexRow skills__wrapper">
+          <div class="skills__skill skills__skill--node flexRow">
+            <i class="fab fa-node-js skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
           </div>
-        </section>
-        
-      </section> 
+          <div class="skills__skill skills__skill--js flexRow">
+            <i class="fab fa-js skills__ico"></i>
+            <i class="fas fa-star skills__star"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
 
-      <!-- S3 -->
-
-      <div class="about cover wrapper  flexCol displayNone">
-        <div class="flexCol about__wrapper">
-          <section class="flexRow cover__section ">
-            <div class="flexCol">
-              <h2 class="h1 about__h2">
-                About<br>
-                Me.<br>
-                My 
-                School.
-              </h2>
-              <a href="https://github.com/sajrus33" rel="”noopener”"
-              target="_blank" class="cover__button about__button">
-                Github
-              </a>
-            </div>
-  
-            <img
-              src="public/img/about.png"
-              alt="Brian Wala photography"
-              class="img--me img--about"
-            />
-            <img
-              src="public/img/about-small.png"
-              alt="photography of Brian Wala"
-              class="img--me--small img--about"
-            />
-          </section>
-          <div class="cover__options about__options flexRow">
-            <a
-              class="cover__option about__option"
-              rel="”noopener”"
-              target="_blank"
-              href="http://www.lo1-wodzislaw.pl/"
-              aria-label="lo 1 wodzislaw"
-            >
-             <div class="about__school about__school--first">
-               <h4 class="about__title">
-                 LO 1
-               </h4>
-             </div>
-            </a>
-            <a
-              class="cover__option about__option"
-              rel="”noopener”"
-              target="_blank"
-              aria-label="po opole"
-              href="https://www.po.opole.pl/"
-
-            >
-            <div class="about__school about__school--second">
-
-                <h4 class="about__title">
-                    PO Opole
-                  </h4>
-            </div>
-            </a>
-            <a
-              class="cover__option about__option"
-              rel="”noopener”"
-              target="_blank"
-              aria-label="pś gliwice"
-              href="https://www.polsl.pl/"
-            >
-            <div class="about__school about__school--thirt">
-                <h4 class="about__title">
-                    PŚ Gliwice
-                  </h4>
-            </div>
-            </a>
           </div>
+          <div class="skills__skill skills__skill--db flexRow">
+            <i class="fas fa-database skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
           </div>
         </div>
+        <div class="flexRow skills__wrapper">
+          <div class="skills__skill skills__skill--react flexRow">
+            <i class="fab fa-react skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
+          </div>
+          <div class="skills__skill skills__skill--html flexRow">
+            <i class="fab fa-html5 skills__ico"></i>
+            <i class="fas fa-star skills__star"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
+          </div>
+          <div class="skills__skill skills__skill--css flexRow">
+            <i class="fab fa-css3-alt skills__ico"></i>
+            <i class="fas fa-star skills__star"></i>
+          </div>
+        </div>
+        <div class="flexRow skills__wrapper">
+          <div class="skills__skill skills__skill--npm flexRow">
+            <i class="fab fa-npm skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
+          </div>
+          <div class="skills__skill skills__skill--gulp flexRow">
+            <i class="fab fa-gulp skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
+          </div>
+          <div class="skills__skill skills__skill--git flexRow">
+            <i class="fab fa-github skills__ico"></i>
+            <i class="fas fa-star skills__star skills__star--half"></i>
+          </div>
+        </div>
+      </section>
 
-        <!-- S4 -->
+    </section>
+  </main>
 
-        <section class="skills wrapper flexCol displayNone">
-          <section class="flexCol skills__section">
-            <h3 class="h3 skills__h3">My skills</h3>
-              <div class="flexRow skills__wrapper">
-                <div class="skills__skill">
-                  <i class="fab fa-node-js skills__ico"></i>
-                  <i class="fas fa-star skills__star"></i>
-                </div>
-                <div class="skills__skill"  >
-                  <i class="fab fa-js skills__ico"></i>
-                  <i class="fas fa-star skills__star"></i>
-                </div>
-                <div class="skills__skill">
-                    <i class="fas fa-database skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-                </div>
-              </div>
-              <div class="flexRow skills__wrapper">
-                <div class="skills__skill">
-                    <i class="fab fa-react skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-                </div>
-                <div class="skills__skill">
-   
-                    <i class="fab fa-html5 skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-               
-                </div>
-                <div class="skills__skill">
-                    <i class="fab fa-css3-alt skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-                
+  <!--  -->
 
-                </div>
-              </div>
-              <div class="flexRow skills__wrapper">
-                <div class="skills__skill">
-                    <i class="fab fa-npm skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-       
-                </div>
-                <div class="skills__skill">
-   
-                    <i class="fab fa-gulp skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
-               
-                </div>
-                <div class="skills__skill">
-                    <i class="fab fa-github skills__ico"></i>
-                    <i class="fas fa-star skills__star"></i>
+  <!--  -->
+  <nav class="nav displayNone">
+    <ul class="nav__list">
+      <li class="nav__link"><a href="#">home</a></li>
+      <li class="nav__link"><a href="#">works</a></li>
+      <li class="nav__link"><a href="#">about</a></li>
+      <li class="nav__link"><a href="#">skills</a></li>
+      <li class="nav__link"><a href="#">contact</a></li>
+    </ul>
+  </nav>
 
-                </div>
-             </div>
-          </section>
-          
-        </section> 
-    </main>
+  <script src="public/script.js"></script>
+</body>
 
-    <!--  -->
-  
-    <!--  -->
-    <nav class="nav displayNone">
-      <ul class="nav__list">
-        <li class="nav__link"><a href="#">home</a></li>
-        <li class="nav__link"><a href="#">works</a></li>
-        <li class="nav__link"><a href="#">about</a></li>
-        <li class="nav__link"><a href="#">skills</a></li>
-        <li class="nav__link"><a href="#">contact</a></li>
-      </ul>
-    </nav>
-
-    <script src="public/script.js"></script>
-  </body>
 </html>

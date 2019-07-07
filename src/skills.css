@@ -1,39 +1,93 @@
 .skills__section {
   height: 100%;
   width: 100%;
+  
 
   /* justify-content: space-between; */
 }
 .skills__h3 {
-  margin: none;
+  margin-top: 40px;
 }
 .skills__wrapper {
-  flex-wrap: wrap;
   width: 100%;
   max-width: 900px;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
 }
 .skills__skill {
   box-sizing: content-box;
   margin-top: 1%;
-  width: 100px;
-  /* height: 50px; */
-  /* border: 2px solid white; */
+  width: 150px;
+  width: var(--skillWidth);
+  height: 100px;
+  height: var(--skillHeight);
+
+  border: 2px solid white;
   /* background-color: #fff; */
   /* text-align: center; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: sta */
+
 }
+.skills__skill--node:hover, .skills__skill--node:hover > .skills__star--half::after{
+  background-color: var(--nodeColor);
+}
+.skills__skill--js:hover, .skills__skill--js:hover > .skills__star--half::after{
+  background-color: var(--jsColor);
+}
+.skills__skill--db:hover, .skills__skill--db:hover > .skills__star--half::after{
+  background-color: var(--dbColor);
+}
+
+.skills__skill--react:hover, .skills__skill--react:hover > .skills__star--half::after{
+  background-color: var(--reactColor);
+}
+.skills__skill--html:hover, .skills__skill--html:hover > .skills__star--half::after{
+  background-color: var(--htmlColor);
+}
+.skills__skill--css:hover, .skills__skill--css:hover > .skills__star--half::after{
+  background-color: var(--cssColor);
+}
+
+.skills__skill--npm:hover, .skills__skill--npm:hover > .skills__star--half::after{
+  background-color: var(--npmColor);
+}
+.skills__skill--gulp:hover, .skills__skill--gulp:hover > .skills__star--half::after{
+  background-color: var(--gulpColor);
+}
+.skills__skill--git:hover, .skills__skill--git:hover > .skills__star--half::after{
+  background-color: var(--gitColor);
+}
+
 .skills__ico {
   font-size: 50px;
   font-size: var(--skillSize);
+/* text-align: center; */
 }
 .skills__star {
-  font-size: 25px;
+  position: relative;
+
+  font-size: calc(var(--skillSize )/ 2);
   background: -webkit-linear-gradient(top, #8f6b29, #fde08d, #df9f28);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.skills__star--half {
+  position: relative;
+  font-size: calc(var(--skillSize )/ 2);
+  background: -webkit-linear-gradient(top, #8f6b29, #fde08d, #df9f28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.skills__star--half::after {
+  content: "";
+  position: absolute;
+  right:0;
+  top:0;
+  bottom: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #000;
 }
