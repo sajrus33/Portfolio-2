@@ -36,10 +36,10 @@
   animation: nodeC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes nodeC {
-0%{
+6%{
     background-color: var(--nodeColor);
   }
-  6%{
+  12%{
     background-color: black;
 
   }
@@ -51,14 +51,14 @@
   animation: jsC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes jsC {
-  0%{
+  10%{
     background-color: black;
 
   }
-5%{
+11%{
     background-color: var(--jsColor);
   }
-  11%{
+  17%{
     background-color: black;
 
   }
@@ -70,14 +70,14 @@
   animation: dbC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes dbC {
-  0%{
+  15%{
     background-color: black;
 
   }
-10%{
+16%{
     background-color: var(--dbColor);
   }
-  16%{
+  22%{
     background-color: black;
 
   }
@@ -90,14 +90,14 @@
   animation: reactC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes reactC {
-  0%{
+  38%{
     background-color: black;
 
   }
-33%{
+39%{
     background-color: var(--reactColor);
   }
-  39%{
+  45%{
     background-color: black;
 
   }
@@ -109,14 +109,14 @@
   animation: htmlC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes htmlC {
-  0%{
+  43%{
     background-color: black;
 
   }
-38%{
+44%{
     background-color: var(--htmlColor);
   }
-  44%{
+  50%{
     background-color: black;
 
   }
@@ -128,14 +128,14 @@
   animation: cssC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes cssC {
-  0%{
+  48%{
     background-color: black;
 
   }
-43%{
+49%{
     background-color: var(--cssColor);
   }
-  49%{
+  55%{
     background-color: black;
 
   }
@@ -148,14 +148,14 @@
   animation: npmC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes npmC {
-  0%{
+  71%{
     background-color: black;
 
   }
-66%{
+72%{
     background-color: var(--npmColor);
   }
-  72%{
+  78%{
     background-color: black;
 
   }
@@ -167,14 +167,14 @@
   animation: gulpC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes gulpC {
-  0%{
+  76%{
     background-color: black;
 
   }
-71%{
+77%{
     background-color: var(--gulpColor);
   }
-  77%{
+  83%{
     background-color: black;
 
   }
@@ -186,14 +186,16 @@
   animation: gitC var(--skillTime) var(--skillBezier) infinite;
 }
 @keyframes gitC {
-  0%{
+
+  81%{
     background-color: black;
 
   }
-76%{
+
+82%{
     background-color: var(--gitColor);
   }
-  82%{
+  88%{
     background-color: black;
 
   }

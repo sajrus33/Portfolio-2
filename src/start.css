@@ -51,8 +51,8 @@ ol {
   --gulpColor: #d34a47;
   --gitColor: #F4CBB2;
   /* skills animation */
-  --skillTime: 6s;
-  --skillBezier: ease-in;
+  --skillTime: 9s;
+  --skillBezier: ease-in-out;
 }
 
 ::-webkit-scrollbar{
