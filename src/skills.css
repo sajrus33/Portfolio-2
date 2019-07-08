@@ -31,34 +31,175 @@
   /* justify-content: sta */
 
 }
-.skills__skill--node:hover, .skills__skill--node:hover > .skills__star--half::after{
-  background-color: var(--nodeColor);
+.skills__skill--node, .skills__skill--node > .skills__star--half::after{
+  /* background-color: var(--nodeColor); */
+  animation: nodeC var(--skillTime) var(--skillBezier) infinite;
 }
-.skills__skill--js:hover, .skills__skill--js:hover > .skills__star--half::after{
-  background-color: var(--jsColor);
+@keyframes nodeC {
+0%{
+    background-color: var(--nodeColor);
+  }
+  6%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
-.skills__skill--db:hover, .skills__skill--db:hover > .skills__star--half::after{
-  background-color: var(--dbColor);
+.skills__skill--js, .skills__skill--js > .skills__star--half::after{
+  animation: jsC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes jsC {
+  0%{
+    background-color: black;
+
+  }
+5%{
+    background-color: var(--jsColor);
+  }
+  11%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
+}
+.skills__skill--db, .skills__skill--db > .skills__star--half::after{
+  animation: dbC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes dbC {
+  0%{
+    background-color: black;
+
+  }
+10%{
+    background-color: var(--dbColor);
+  }
+  16%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
 
-.skills__skill--react:hover, .skills__skill--react:hover > .skills__star--half::after{
-  background-color: var(--reactColor);
+.skills__skill--react, .skills__skill--react > .skills__star--half::after{
+  animation: reactC var(--skillTime) var(--skillBezier) infinite;
 }
-.skills__skill--html:hover, .skills__skill--html:hover > .skills__star--half::after{
-  background-color: var(--htmlColor);
+@keyframes reactC {
+  0%{
+    background-color: black;
+
+  }
+33%{
+    background-color: var(--reactColor);
+  }
+  39%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
-.skills__skill--css:hover, .skills__skill--css:hover > .skills__star--half::after{
-  background-color: var(--cssColor);
+.skills__skill--html, .skills__skill--html > .skills__star--half::after{
+  animation: htmlC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes htmlC {
+  0%{
+    background-color: black;
+
+  }
+38%{
+    background-color: var(--htmlColor);
+  }
+  44%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
+}
+.skills__skill--css, .skills__skill--css > .skills__star--half::after{
+  animation: cssC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes cssC {
+  0%{
+    background-color: black;
+
+  }
+43%{
+    background-color: var(--cssColor);
+  }
+  49%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
 
-.skills__skill--npm:hover, .skills__skill--npm:hover > .skills__star--half::after{
-  background-color: var(--npmColor);
+.skills__skill--npm, .skills__skill--npm > .skills__star--half::after{
+  animation: npmC var(--skillTime) var(--skillBezier) infinite;
 }
-.skills__skill--gulp:hover, .skills__skill--gulp:hover > .skills__star--half::after{
-  background-color: var(--gulpColor);
+@keyframes npmC {
+  0%{
+    background-color: black;
+
+  }
+66%{
+    background-color: var(--npmColor);
+  }
+  72%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
-.skills__skill--git:hover, .skills__skill--git:hover > .skills__star--half::after{
-  background-color: var(--gitColor);
+.skills__skill--gulp, .skills__skill--gulp > .skills__star--half::after{
+  animation: gulpC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes gulpC {
+  0%{
+    background-color: black;
+
+  }
+71%{
+    background-color: var(--gulpColor);
+  }
+  77%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
+}
+.skills__skill--git, .skills__skill--git > .skills__star--half::after{
+  animation: gitC var(--skillTime) var(--skillBezier) infinite;
+}
+@keyframes gitC {
+  0%{
+    background-color: black;
+
+  }
+76%{
+    background-color: var(--gitColor);
+  }
+  82%{
+    background-color: black;
+
+  }
+  100%{
+    background-color: black;
+  }
 }
 
 .skills__ico {
@@ -74,6 +215,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .skills__star--half {
   position: relative;
   font-size: calc(var(--skillSize )/ 2);
