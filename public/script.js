@@ -101,23 +101,22 @@ const myDOM = {
       // myDOM.wrapperPerspective.classList.toggle("offPerspective");
       myDOM.noneTransition.classList.remove("noneTransition");
 
-      myDOM.nav.style.transform = "translateX(-50%)";
 
-      if (window.innerWidth <= 768) {
-        myDOM.flag.smallScreen = true;
-        myDOM.wrapperPerspective.classList.toggle("displayNone");
-        myDOM.nav.style.transform = "translateX(0)";
-      }
+      // if (window.innerWidth <= 768) {
+      //   myDOM.flag.smallScreen = true;
+      //   myDOM.wrapperPerspective.classList.toggle("displayNone");
+      // }
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");
-      myDOM.navLinks.forEach((link, i) => {
-        const time = Number(String(i + 1) + "00");
-        const linkN = link;
-        console.log(typeof time);
-        setTimeout(() => {
-          console.log(link);
-        }, time);
-      });
+
+      // myDOM.navLinks.forEach((link, i) => {
+      // const time = Number(String(i + 1) + "00");
+      // const linkN = link;
+      // console.log(typeof time);
+      // setTimeout(() => {
+      //   console.log(link);
+      // }, time);
+      // });
       // myDOM.nav.classList.toggle("goInRight");
     });
 
@@ -159,4 +158,5 @@ const init = () => {
   });
   myDOM.loadWorks();
 };
-window.onload = init;
+window.addEventListener("load", init);
+
