@@ -98,14 +98,8 @@ const myDOM = {
 
   listen: () => {
     myDOM.hamburger.addEventListener("click", () => {
-      // myDOM.wrapperPerspective.classList.toggle("offPerspective");
+
       myDOM.noneTransition.classList.remove("noneTransition");
-
-
-      // if (window.innerWidth <= 768) {
-      //   myDOM.flag.smallScreen = true;
-      //   myDOM.wrapperPerspective.classList.toggle("displayNone");
-      // }
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");
 
@@ -122,16 +116,18 @@ const myDOM = {
 
     //
 
-    myDOM.navLinks.forEach(link => {
+    myDOM.navLinks.forEach((link, linkI) => {
       link.addEventListener("click", () => {
-        myDOM.navLinks.forEach(link => {
-          link.classList.remove("onMark");
+        myDOM.navLinks.forEach(linke => {
+          linke.classList.remove("onMark");
         });
+
         link.classList.add("onMark");
-        myDOM.wrappers.forEach(wrapper => {
-          // console.log(link.innerText.toLowerCase());
+
+        myDOM.wrappers.forEach((wrapper, wrapperI) => {
+
           wrapper.classList.add("displayNone");
-          if (link.innerText.toLowerCase() == wrapper.classList[0]) {
+          if (linkI == wrapperI) {
             wrapper.classList.remove("displayNone");
           }
         });
