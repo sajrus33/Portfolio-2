@@ -1,4 +1,5 @@
 "ue strict";
+/** Works image sources */
 const worksSrc = [
   "public/img/works/web-flubmaster.png",
   "public/img/works/web-portfolio.png",
@@ -10,6 +11,7 @@ const worksSrc = [
   "public/img/works/game-tower.png",
   "public/img/works/lib-circle.png"
 ];
+/* Works titles */
 const worksTitle = [
   "flubmaster",
   "portfolio",
@@ -21,10 +23,15 @@ const worksTitle = [
   "tower",
   "circle"
 ];
-
+/** @property myDOM 
+ * @type DOM 
+ * @description elements and listeners */
 const myDOM = {
+
   wrapperPerspective: document.querySelector(".wrapper--perspective"),
   noneTransition: document.querySelector(".noneTransition"),
+
+  headerBtn: document.querySelector(".header__button"),
 
   hamburger: document.querySelector(".header__hamb"),
   nav: document.querySelector(".nav"),
@@ -45,6 +52,7 @@ const myDOM = {
 
   actualWork: 0,
 
+  /*  Function for works carousele, change works images display */
   loadWorks: (way = 0) => {
     myDOM.worksWork.forEach(work => {
       work.classList.remove("fadeIn");
@@ -96,25 +104,18 @@ const myDOM = {
     });
   },
 
+  /*    All listeners */
   listen: () => {
+    /*    Hamburger ico click listener */
+
     myDOM.hamburger.addEventListener("click", () => {
 
       myDOM.noneTransition.classList.remove("noneTransition");
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");
-
-      // myDOM.navLinks.forEach((link, i) => {
-      // const time = Number(String(i + 1) + "00");
-      // const linkN = link;
-      // console.log(typeof time);
-      // setTimeout(() => {
-      //   console.log(link);
-      // }, time);
-      // });
-      // myDOM.nav.classList.toggle("goInRight");
     });
 
-    //
+    /*  Navigation links click listener */
 
     myDOM.navLinks.forEach((link, linkI) => {
       link.addEventListener("click", () => {
@@ -135,7 +136,7 @@ const myDOM = {
       });
     });
 
-    //
+    /*   Works carousel click listener */
 
     myDOM.worksPrevBtn.addEventListener("click", () => {
       myDOM.loadWorks(-1);
@@ -147,6 +148,7 @@ const myDOM = {
   }
 };
 
+/*  Function, init main app */
 const init = () => {
   myDOM.listen();
   worksSrc.forEach(src => {
@@ -156,11 +158,14 @@ const init = () => {
 };
 window.addEventListener("load", init);
 
+
+
 (() => {
   const canvas = document.querySelector(".canvas--rain");
 
   const ctx = canvas.getContext("2d");
 
+  ctx.lineJoin = "round";
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
   canvas.style = "background: radial-gradient(#246, #123); background: black";
@@ -196,9 +201,8 @@ window.addEventListener("load", init);
     }
   }
 
-  const singleDrop = new Drop(50, 5, 10, 50, 15, 0.1)
   const rain = [];
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 800; i++) {
     rain.push(new Drop(
       Math.round(Math.random() * 10) + 10, /*height*/
 
@@ -213,14 +217,11 @@ window.addEventListener("load", init);
 
 
   function animate() {
-    requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.lineJoin = "round";
-    // singleDrop.draw();
     for (let i = 0; i < rain.length; i++) {
       rain[i].draw();
     }
-
+    requestAnimationFrame(animate);
   }
 
   animate();

@@ -17,6 +17,7 @@
 </head>
 
 <body class="flexRow">
+  <canvas class="canvas--rain"></canvas>
 
   <main class="wrapper--perspective flexCol noneTransition ">
     <div class="shadow"></div>
@@ -210,10 +211,40 @@
 
     <!-- S5 -->
     <section class="wrapper flexCol contact__section">
-      <canvas class="canvas--rain"></canvas>
       <h3 class="h3">Send me a message</h3>
+      <div class="contact__wrapper flexRow">
+        <form action="" class="contact__form flexCol">
+          <div class="contact__wrapper--message">
+            <textarea id="message" placeholder="" class="contact__input contact__input--message"></textarea>
+            <label for="message" class="contact__label">Message:</label>
+          </div>
+          <div class="contact__wrapper--inputs flexRow">
+            <div class="contact__wrapper--input">
+              <input type="text" id="name" class="contact__input contact__input">
+              <label for="name" class="contact__label">name</label>
 
+            </div>
+            <div class="contact__wrapper--input ">
+              <input type="email" id="email" class="contact__input contact__input">
+              <label for="email" class="contact__label">email</label>
 
+            </div>
+          </div>
+
+          <input type="submit" value="Send message" class="contact__input contact__input--submit">
+        </form>
+        <div class="contact__aside flexCol">
+          <p class="contact__info contact__info--first">Brianwala22@gmail.com</p>
+          <p class="contact__info contact__info--second">+48 539 991 716</p>
+          <p class="contact__info">+48 605 433 655</p>
+          <a class="contact__link contact__link--first" rel="noopener" target="_blank"
+            href="https://www.linkedin.com/in/brian-wala-2a852a184/">LinkedIn</a>
+          <a class="contact__link contact__link--second" rel="noopener" target="_blank"
+            href="https://sajrus33.github.io/Portfolio/">Portfolio 2</a>
+          <a class="contact__link contact__link--thirt" rel="noopener" target="_blank"
+            href="https://www.facebook.com/brian.wala">Facebook</a>
+        </div>
+      </div>
     </section>
   </main>
 

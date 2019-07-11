@@ -24,6 +24,10 @@ ol {
   /* colors */
   --gray: #282828;
   --blue: #0f33ff;
+  --pink:#ea4c89;
+  --blueLight:#1769ff;
+  --linkedColor: #0077B5;
+  --fbColor: #3B5998;
   /* start */
   --wrapperWidth: 90%;
 
@@ -51,8 +55,11 @@ ol {
   --gulpColor: #d34a47;
   --gitColor: #F4CBB2;
   /* skills animation */
-  --skillTime: 9s;
+  --skillTime: 7s;
   --skillBezier: ease-in-out;
+
+  /* contact */
+  --inputH:50px;
 }
 
 ::-webkit-scrollbar{
@@ -97,6 +104,7 @@ body {
 .wrapper--perspective {
   height: 100vh;
   width: 100%;
+  background-color: #000;
   outline: 30px solid #0f33ff;
   animation: 0.4s perspectiveOff forwards;
   overflow: hidden;
@@ -208,4 +216,12 @@ body {
   width: 100%;
   height: 15px;
   background-color: #0f33ff;
+}
+
+
+.canvas--rain{
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height:100%;
 }

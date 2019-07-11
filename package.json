@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm install",
+    "start": "npm install && gulp watch",
     "dev": "gulp watch",
     "un": "rimraf node_modules"
   },

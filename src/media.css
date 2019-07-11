@@ -56,16 +56,20 @@
     transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
   }
 }
-@media only screen and (max-width: 900px) {
-  :root{
-    --skillWidth: 200px;
-  }
-}
+
 @media only screen and (max-width: 900px) {
   .h1 {
     font-size: 40px;
   }
-
+.contact__link{
+  display: none;
+}
+.contact__wrapper{
+  flex-wrap: wrap;
+}
+.contact__info--second{
+  display: none;
+}
   :root {
     --workMainWidth: 240px;
     --workWidth: 120px;
@@ -77,6 +81,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  :root {
+    --inputH: 40px;
+  }
   .nav{
     transform: translateX(0);
   }
