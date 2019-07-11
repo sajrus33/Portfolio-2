@@ -156,70 +156,72 @@ const init = () => {
 };
 window.addEventListener("load", init);
 
-const canvas = document.querySelector(".canvas--rain");
+(() => {
+  const canvas = document.querySelector(".canvas--rain");
 
-const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-canvas.style = "background: radial-gradient(#246, #123); background: black";
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.style = "background: radial-gradient(#246, #123); background: black";
 
-let x = 0;
+  let x = 0;
 
-class Drop {
-  constructor(height, width, startPositionX, startPositionY, speed, colorOpacity) {
-    this.height = height;
-    this.width = width;
-    this.startPositionX = startPositionX;
-    this.startPositionY = startPositionY;
-    this.currentPositionY = startPositionY;
-    this.speed = speed;
-    this.colorOpacity = colorOpacity;
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.moveTo(this.startPositionX, this.currentPositionY);
-    ctx.lineTo(this.startPositionX, this.currentPositionY + this.height);
-    ctx.strokeStyle = "rgba(150, 150, 150, " + this.colorOpacity + ")";
-    ctx.lineWidth = this.width;
-    ctx.stroke();
-    this.update();
-  }
+  class Drop {
+    constructor(height, width, startPositionX, startPositionY, speed, colorOpacity) {
+      this.height = height;
+      this.width = width;
+      this.startPositionX = startPositionX;
+      this.startPositionY = startPositionY;
+      this.currentPositionY = startPositionY;
+      this.speed = speed;
+      this.colorOpacity = colorOpacity;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.moveTo(this.startPositionX, this.currentPositionY);
+      ctx.lineTo(this.startPositionX, this.currentPositionY + this.height);
+      ctx.strokeStyle = "rgba(150, 150, 150, " + this.colorOpacity + ")";
+      ctx.lineWidth = this.width;
+      ctx.stroke();
+      this.update();
+    }
 
-  update() {
-    if (this.currentPositionY + this.height > canvas.height) {
-      this.currentPositionY = 0;
-    } else {
-      this.currentPositionY += this.speed;
+    update() {
+      if (this.currentPositionY + this.height > canvas.height) {
+        this.currentPositionY = 0;
+      } else {
+        this.currentPositionY += this.speed;
+      }
     }
   }
-}
 
-const singleDrop = new Drop(50, 5, 10, 50, 15, 0.1)
-const rain = [];
-for (let i = 0; i < 1000; i++) {
-  rain.push(new Drop(
-    Math.round(Math.random() * 10) + 10, /*height*/
+  const singleDrop = new Drop(50, 5, 10, 50, 15, 0.1)
+  const rain = [];
+  for (let i = 0; i < 1000; i++) {
+    rain.push(new Drop(
+      Math.round(Math.random() * 10) + 10, /*height*/
 
-    Math.round(Math.random() * 20) / 10, /*width*/
-    Math.round(Math.random() * canvas.width), /*startPositionX*/
-    Math.round(Math.random() * canvas.height), /*startPositionY*/
-    Math.round(Math.random() * 5) + 5, /*speed*/
-    Math.random() * .3 /* colorOpacity */
-  ))
-}
-
-
-
-function animate() {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.lineJoin = "round";
-  // singleDrop.draw();
-  for (let i = 0; i < rain.length; i++) {
-    rain[i].draw();
+      Math.round(Math.random() * 20) / 10, /*width*/
+      Math.round(Math.random() * canvas.width), /*startPositionX*/
+      Math.round(Math.random() * canvas.height), /*startPositionY*/
+      Math.round(Math.random() * 5) + 5, /*speed*/
+      Math.random() * .3 /* colorOpacity */
+    ))
   }
 
-}
 
-animate();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.lineJoin = "round";
+    // singleDrop.draw();
+    for (let i = 0; i < rain.length; i++) {
+      rain[i].draw();
+    }
+
+  }
+
+  animate();
+})();

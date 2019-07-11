@@ -13,7 +13,7 @@
   "scripts": {
     "start": "npm install",
     "dev": "gulp watch",
-    "remove": "rimraf node_modules"
+    "un": "rimraf node_modules"
   },
   "keywords": [],
   "author": "yo",
