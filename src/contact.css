@@ -6,10 +6,13 @@
 .contact__wrapper{
     width: 100%;
     height: 100%;
-margin-top: 30px;
+padding-top: 30px;
     /* background-color: tomato; */
     /* justify-content: space-around; */
     /* align-items: space-around; */
+    overflow: hidden;
+    overflow-y: scroll;
+
 }
 
 .contact__form{
@@ -18,7 +21,6 @@ margin-top: 30px;
     /* flex-grow: 1; */
 /* background-color: tomato; */
 justify-content: flex-start;
-overflow: scroll;
 }
 .contact__wrapper--inputs{
     width: 100%;
@@ -61,7 +63,7 @@ overflow: scroll;
   padding: 5px;
 
 }
-.contact__input:focus + label{
+.contact__input:focus + label,.contact__input:valid + label{
 animation: labelMove .2s ease-in-out forwards;
 }
 
