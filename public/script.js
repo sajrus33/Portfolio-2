@@ -137,12 +137,11 @@ const myDOM = {
       };
       // send email with emailjs
       emailjs
-        .send("brianwala22_gmail_com", "reca3", newMessage)
+        .send("sajrus33", "template_jvUkc7d6", newMessage)
         .then(
           response => {
             // console.log(response)
             myDOM.myAlert("Message has been sent");
-            grecaptcha.reset();
             myDOM.flag.checkedAntiBot = true;
             for (let property in myDOM.mailForm) {
               if (myDOM.mailForm.hasOwnProperty(property)) {
@@ -214,7 +213,6 @@ const myDOM = {
     myDOM.mailForm.check.addEventListener("click", () => {
       console.log(myDOM.flag.checkedAntiBot);
       if (!myDOM.flag.checkedAntiBot) {
-        grecaptcha.execute();
         myDOM.flag.checkedAntiBot = true;
       } else {
         event.preventDefault();
