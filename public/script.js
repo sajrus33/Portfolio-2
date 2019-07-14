@@ -51,9 +51,8 @@ const myDOM = {
     name: document.querySelector(".contact__input--name"),
     email: document.querySelector(".contact__input--email"),
     submit: document.querySelector(".contact__input--submit")
-    // check: document.querySelector(".contact__input--check")
-
   },
+  check: document.querySelector(".contact__input--check"),
 
   flag: {
     checkedAntiBot: false
@@ -138,12 +137,17 @@ const myDOM = {
       console.log(newMessage);
       // send email with emailjs
       emailjs
-        .send("sajrus33", "template_jvUkc7d6", newMessage)
+        .send("brianwala22_gmail_com", "template_gqc9FdOP", newMessage)
         .then(
           response => {
             // console.log(response)
             myDOM.myAlert("Message has been sent");
-            myDOM.flag.checkedAntiBot = true;
+            myDOM.flag.checkedAntiBot = false;
+            myDOM.check.click();
+            myDOM.flag.checkedAntiBot = false;
+
+            grecaptcha.reset();
+
             for (let property in myDOM.mailForm) {
               if (myDOM.mailForm.hasOwnProperty(property)) {
                 if (property !== "submit") {
@@ -211,14 +215,15 @@ const myDOM = {
     });
 
     /* Verify anti bot, checkbox listener */
-    // myDOM.mailForm.check.addEventListener("click", () => {
-    //   console.log(myDOM.flag.checkedAntiBot);
-    //   if (!myDOM.flag.checkedAntiBot) {
-    //     myDOM.flag.checkedAntiBot = true;
-    //   } else {
-    //     event.preventDefault();
-    //   }
-    // });
+    myDOM.check.addEventListener("click", () => {
+      console.log(myDOM.flag.checkedAntiBot);
+      if (!myDOM.flag.checkedAntiBot) {
+        grecaptcha.reset();
+        myDOM.flag.checkedAntiBot = true;
+      } else {
+        event.preventDefault();
+      }
+    });
 
     /* Send Email, form submit listener */
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
