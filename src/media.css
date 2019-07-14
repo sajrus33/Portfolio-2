@@ -28,24 +28,8 @@
   }
 }
 
-.goInRight {
-  /* transform: translateX(50vw);
-  opacity: 0; */
-  animation: goInRight 0.2s ease-in forwards;
-}
-@keyframes goInRight {
-  0% {
-    transform: translateX(50vw);
-    opacity: 0;
-  }
-  /* 40% {
-    opacity: 0;
-  } */
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+
+
 
 .onPerspective {
   animation: 0.4s perspectiveOn forwards;
@@ -53,9 +37,49 @@
 
 @keyframes perspectiveOn {
   100% {
-    transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
+    transform: rotateY(30deg) translateX(50vw) translateZ(-1800px);
   }
 }
+
+.tip {
+       position: fixed;
+       top: 0;
+       z-index: 999;
+       width: 100vw;
+       height: 70px;
+       background-color: var(--blue);
+       color: white;
+       animation: tip 4s forwards;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       font-size: 1.15em;
+      font-family: "Montserrat", sans-serif;
+      
+       white-space: no-wrap;
+       pointer-events: none;
+     }
+     @keyframes tip {
+       10% {
+         top: 60%;
+       }
+       15% {
+         top: 45%;
+       }
+       20% {
+         top: 55%;
+       }
+       25% {
+         top: 50%;
+       }
+       90% {
+         top: 50%;
+       }
+       100% {
+         top: 100%;
+       }
+     }
 
 @media only screen and (max-width: 900px) {
   .h1 {
@@ -117,6 +141,11 @@
   }
 }
 
+@media only screen and (max-height: 380px) {
+  .nav__link {
+    line-height: 1.2;
+  }
+}
 @media only screen and (max-width: 320px) {
   :root {
     --skillWidth: 100px;
@@ -128,3 +157,5 @@
     --workMainWidth: 200px;
   }
 }
+
+

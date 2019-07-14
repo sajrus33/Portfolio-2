@@ -46,12 +46,28 @@ const myDOM = {
   worksNextBtn: document.querySelector(".works__arrow--next"),
   worksPrevBtn: document.querySelector(".works__arrow--prev"),
 
+  mailForm: {
+    message: document.querySelector(".contact__input--message"),
+    name: document.querySelector(".contact__input--name"),
+    email: document.querySelector(".contact__input--email"),
+    submit: document.querySelector(".contact__input--submit")
+  },
+
   flag: {
     smallScreen: false
   },
 
   actualWork: 0,
-
+  myAlert: (describe) => {
+    const oldAlert = document.querySelector(".tip");
+    if (oldAlert) {
+      oldAlert.remove();
+    }
+    const newAlert = document.createElement("div");
+    newAlert.classList.add("tip");
+    newAlert.innerText = String(describe);
+    document.body.appendChild(newAlert);
+  },
   /*  Function for works carousele, change works images display */
   loadWorks: (way = 0) => {
     myDOM.worksWork.forEach(work => {
@@ -103,7 +119,49 @@ const myDOM = {
       myDOM.worksTitle[i].innerText = worksTitle[workNew];
     });
   },
+  sendEmail: () => {
+    event.preventDefault();
+    const name = myDOM.mailForm.name.value;
+    const email = myDOM.mailForm.email.value;
+    const message = myDOM.mailForm.message.value;
 
+    if (email && message && name) {
+      //  creating new message from inputs values
+      const newMessage = {
+        replay_to: "new portfolio",
+        from_name: String(name) + " " + String(email),
+        to_name: "Brian W.",
+        message_html: String(message)
+      };
+      // send email with emailjs
+      emailjs
+        .send("brianwala22_gmail_com", "template_gqc9FdOP", newMessage)
+        .then(
+          response => {
+            // console.log(response)
+            myDOM.myAlert("Message has been sent");
+            // grecaptcha.reset();
+            for (let property in myDOM.mailForm) {
+              if (myDOM.mailForm.hasOwnProperty(property)) {
+                if (property !== "submit") {
+                  myDOM.mailForm[property].value = "";
+                }
+              }
+            }
+          },
+          error => {
+            let alertString;
+            if (error.status == 400) {
+              alertString = "Verification by reCAPTCHA is needed !";
+            } else {
+              alertString = "We are sorry, automatic mailbox is full !";
+            }
+            myDOM.myAlert(alertString);
+          }
+        );
+      // clean inputs values
+    } else myDOM.myAlert("Please fill out all form positions");
+  },
   /*    All listeners */
   listen: () => {
     /*    Hamburger ico click listener */
@@ -113,6 +171,11 @@ const myDOM = {
       myDOM.noneTransition.classList.remove("noneTransition");
       myDOM.wrapperPerspective.classList.toggle("onPerspective");
       myDOM.nav.classList.toggle("displayNone");
+      myDOM.navLinks.forEach((link, i) => {
+        setTimeout(() => {
+          link.classList.toggle("goInRight");
+        }, ((i + 1) * 4) + "0");
+      });
     });
 
     /*  Navigation links click listener */
@@ -145,6 +208,9 @@ const myDOM = {
     myDOM.worksNextBtn.addEventListener("click", () => {
       myDOM.loadWorks(1);
     });
+
+    /* Send Email, form submit listener */
+    myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
   }
 };
 

@@ -97,9 +97,11 @@ ol {
 
 /* for all */
 body {
+  height: 100vh;
   background-color: #000;
   color: white;
   perspective: 1000px;
+  overflow: hidden;
 }
 .wrapper--perspective {
   height: 100vh;
@@ -116,7 +118,7 @@ body {
 
 @keyframes perspectiveOff {
   0% {
-    transform: rotateY(30deg) translateX(60vw) translateZ(-1800px);
+    transform: rotateY(30deg) translateX(50vw) translateZ(-1800px);
   }
   100% {
     transform: none;
@@ -195,16 +197,35 @@ body {
   text-transform: capitalize;
   text-align: center;
 
-  transform: translateX(-50%);
+  transform: translateX(-70%);
 }
-
+.nav__list{
+  /* height: 100%; */
+  overflow: hidden;
+}
 .nav__link {
   position: relative;
-  line-height: 20vh;
-  width: auto;
-  /* animation: goInRight 0.2s ease-in forwards; */
-}
+  line-height: 1.6;
+  /* height: 10vh; */
+  width: 100%;
 
+  transform: translateX(100%);
+  opacity: 0;
+}
+.goInRight{
+  animation: goInRight 0.2s ease-in-out forwards;
+
+}
+@keyframes goInRight {
+
+  70% {
+    opacity: .5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .onMark {
 }
 .onMark::before {

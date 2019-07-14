@@ -9,11 +9,17 @@
 
   <link rel="stylesheet" href="public/index.css" />
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_tdJP5pQdemG5AhJpq5J7O");
+    })();
+  </script>
 </head>
 
 <body class="flexRow">
@@ -36,7 +42,7 @@
 
     <!-- S1 -->
 
-    <div class="cover wrapper  flexCol displayNone">
+    <div class="cover wrapper  flexCol">
       <section class="flexRow cover__section ">
         <div class="flexCol">
           <h1 class="h1">
@@ -210,7 +216,7 @@
     </div>
 
     <!-- S5 -->
-    <section class="wrapper flexCol contact__section">
+    <section class="wrapper flexCol contact__section displayNone">
       <h3 class="h3">Send me a message</h3>
       <div class="contact__wrapper flexRow">
         <form action="" class="contact__form flexCol">
@@ -220,12 +226,12 @@
           </div>
           <div class="contact__wrapper--inputs flexRow">
             <div class="contact__wrapper--input">
-              <input type="text" id="name" class="contact__input " required>
+              <input type="text" id="name" class="contact__input contact__input--name" required>
               <label for="name" class="contact__label">name</label>
 
             </div>
             <div class="contact__wrapper--input ">
-              <input type="text" id="email" class="contact__input " required>
+              <input type="text" id="email" class="contact__input contact__input--email" required>
               <label for="email" class="contact__label">email</label>
 
             </div>
@@ -251,8 +257,8 @@
 
 
   <!-- nav -->
-  <nav class="nav displayNone">
-    <ul class="nav__list">
+  <nav class="nav flexCol displayNone">
+    <ul class="nav__list flexCol">
       <li class="nav__link"><a href="#">home</a></li>
       <li class="nav__link"><a href="#">works</a></li>
       <li class="nav__link"><a href="#">about</a></li>
@@ -261,6 +267,15 @@
     </ul>
   </nav>
 
+
+  <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lfyla0UAAAAAHykY6MynIZglVC1QUiGlKe0lBOm', { action: 'login' }).then(function (token) {
+
+      });
+    });
+  </script>
   <script src="public/script.js"></script>
 </body>
 
