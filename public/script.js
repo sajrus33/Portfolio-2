@@ -140,7 +140,7 @@ const myDOM = {
           response => {
             // console.log(response)
             myDOM.myAlert("Message has been sent");
-            // grecaptcha.reset();
+            grecaptcha.reset();
             for (let property in myDOM.mailForm) {
               if (myDOM.mailForm.hasOwnProperty(property)) {
                 if (property !== "submit") {
