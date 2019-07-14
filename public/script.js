@@ -126,6 +126,7 @@ const myDOM = {
     const name = myDOM.mailForm.name.value;
     const email = myDOM.mailForm.email.value;
     const message = myDOM.mailForm.message.value;
+    grecaptcha.execute();
 
     if (email && message && name) {
       //  creating new message from inputs values
