@@ -137,7 +137,7 @@ const myDOM = {
       };
       // send email with emailjs
       emailjs
-        .send("brianwala22_gmail_com", "template_gqc9FdOP", newMessage)
+        .send("brianwala22_gmail_com", "reca3", newMessage)
         .then(
           response => {
             // console.log(response)
