@@ -50,11 +50,13 @@ const myDOM = {
     message: document.querySelector(".contact__input--message"),
     name: document.querySelector(".contact__input--name"),
     email: document.querySelector(".contact__input--email"),
-    submit: document.querySelector(".contact__input--submit")
+    submit: document.querySelector(".contact__input--submit"),
+    check: document.querySelector(".contact__input--check")
+
   },
 
   flag: {
-    smallScreen: false
+    checkedAntiBot: false
   },
 
   actualWork: 0,
@@ -141,6 +143,7 @@ const myDOM = {
             // console.log(response)
             myDOM.myAlert("Message has been sent");
             grecaptcha.reset();
+            myDOM.flag.checkedAntiBot = true;
             for (let property in myDOM.mailForm) {
               if (myDOM.mailForm.hasOwnProperty(property)) {
                 if (property !== "submit") {
@@ -165,7 +168,6 @@ const myDOM = {
   /*    All listeners */
   listen: () => {
     /*    Hamburger ico click listener */
-
     myDOM.hamburger.addEventListener("click", () => {
 
       myDOM.noneTransition.classList.remove("noneTransition");
@@ -189,7 +191,6 @@ const myDOM = {
         link.classList.add("onMark");
 
         myDOM.wrappers.forEach((wrapper, wrapperI) => {
-
           wrapper.classList.add("displayNone");
           if (linkI == wrapperI) {
             wrapper.classList.remove("displayNone");
@@ -207,6 +208,17 @@ const myDOM = {
 
     myDOM.worksNextBtn.addEventListener("click", () => {
       myDOM.loadWorks(1);
+    });
+
+    /* Verify anti bot, checkbox listener */
+    myDOM.mailForm.check.addEventListener("click", () => {
+      console.log(myDOM.flag.checkedAntiBot);
+      if (!myDOM.flag.checkedAntiBot) {
+        grecaptcha.execute();
+        myDOM.flag.checkedAntiBot = true;
+      } else {
+        event.preventDefault();
+      }
     });
 
     /* Send Email, form submit listener */

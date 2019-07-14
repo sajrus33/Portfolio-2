@@ -1,12 +1,13 @@
-.contact__section{
-    margin-top: calc( 50px  + 3%);
-   justify-content: center;
+.contact__section {
+    margin-top: calc(50px + 3%);
+    justify-content: center;
 
 }
-.contact__wrapper{
+
+.contact__wrapper {
     width: 100%;
     height: 100%;
-padding-top: 30px;
+    padding-top: 30px;
     /* background-color: tomato; */
     /* justify-content: space-around; */
     /* align-items: space-around; */
@@ -15,25 +16,28 @@ padding-top: 30px;
 
 }
 
-.contact__form{
+.contact__form {
     height: 100%;
     max-width: 700px;
     /* flex-grow: 1; */
-/* background-color: tomato; */
-justify-content: flex-start;
+    /* background-color: tomato; */
+    justify-content: flex-start;
 }
-.contact__wrapper--inputs{
+
+.contact__wrapper--inputs {
     width: 100%;
     justify-content: space-between;
 }
-.contact__wrapper--input{
+
+.contact__wrapper--input {
     position: relative;
     width: 45%;
-    height:40px;
+    height: 40px;
     margin-top: 30px;
     padding-bottom: 5px;
 }
-.contact__input{
+
+.contact__input {
     position: relative;
     width: 100%;
     height: 40px;
@@ -48,32 +52,36 @@ justify-content: flex-start;
 
 }
 
-.contact__wrapper--message{
+.contact__wrapper--message {
     position: relative;
-      height: 50%;
-      width: 100%;
-      /* justify-self: flex-start;
+    height: 50%;
+    width: 100%;
+    /* justify-self: flex-start;
     align-self: flex-start; */
 
-    }
-.contact__input--message{
-  width: 100%;
-  height: 100%;
-  border: 2px white solid;
-  padding: 5px;
-
-}
-.contact__input:focus + label,.contact__input:valid + label{
-animation: labelMove .2s ease-in-out forwards;
 }
 
-::placeholder{
+.contact__input--message {
+    width: 100%;
+    height: 100%;
+    border: 2px white solid;
+    padding: 5px;
+
+}
+
+.contact__input:focus+label,
+.contact__input:valid+label {
+    animation: labelMove .2s ease-in-out forwards;
+}
+
+::placeholder {
     color: white;
 }
-.contact__label{
+
+.contact__label {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     pointer-events: none;
     font-size: 30px;
     font-weight: 30px;
@@ -81,20 +89,79 @@ animation: labelMove .2s ease-in-out forwards;
 }
 
 @keyframes labelMove {
-    100%{
-        top:-25px;
+    100% {
+        top: -25px;
         font-size: 20px;
     }
 }
 
+.summary__wrapper--check {
+    margin-top: 15px;
+    align-self: flex-start;
+
+}
+
+.summary__label--check {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+
+    margin-top: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
 
 
-.contact__input--submit{
+}
+
+.summary__check {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.summary__mark {
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+
+    border: 2px solid #93d347;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.summary__mark::before {
+    content: "";
+    position: absolute;
+
+
+}
+
+.summary__check:checked~.summary__mark::before {
+    left: 50%;
+    top: 45%;
+    width: 20%;
+    height: 40%;
+    background-color: transparent;
+    border: solid #888888;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+}
+
+
+
+.contact__input--submit {
     min-height: 50px;
     width: 90%;
     max-width: 400px;
 
-    margin: 60px 0 30px 0;
+    margin: 30px 0 30px 0;
 
     background-color: var(--blue);
     font-weight: 700;
@@ -102,40 +169,44 @@ animation: labelMove .2s ease-in-out forwards;
     border: none;
 
     cursor: pointer;
-    
+
 }
 
 
-.contact__aside{
+.contact__aside {
     padding: 0 45px;
     align-self: flex-start;
 }
-.contact__info{
+
+.contact__info {
     margin: 15px 0;
     font-weight: 700;
 }
 
-.contact__info--first{
+.contact__info--first {
     margin-top: 5px;
 }
-.contact__link{
-    width:130px;
+
+.contact__link {
+    width: 130px;
     margin-bottom: 25px;
-    padding: 8px 0; 
+    padding: 8px 0;
     font-weight: 700;
     text-align: center;
 
 }
-.contact__link--first{
+
+.contact__link--first {
     background-color: var(--linkedColor);
 
 }
-.contact__link--second{
+
+.contact__link--second {
     background-color: var(--pink);
 }
-.contact__link--thirt{
+
+.contact__link--thirt {
     background-color: var(--fbColor);
     margin-bottom: 0;
 
 }
-
