@@ -132,7 +132,7 @@ const myDOM = {
       const newMessage = {
         replay_to: "new portfolio",
         from_name: String(name) + " " + String(email),
-        to_name: "Brian W.",
+        to_name: "Brian W",
         message_html: String(message)
       };
       // send email with emailjs
