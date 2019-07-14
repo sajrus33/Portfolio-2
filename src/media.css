@@ -1,13 +1,16 @@
 .displayNone {
   display: none;
 }
+
 .fadeIn {
   animation: fadeIn 0.4s ease-in-out forwards;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
+
   /* 50% {
     opacity: 0;
   } */
@@ -15,14 +18,17 @@
     opacity: 1;
   }
 }
+
 .fadeOut {
   opacity: 1;
   animation: fadeOut 0.4s ease-out forwards;
 }
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -42,58 +48,52 @@
 }
 
 .tip {
-       position: fixed;
-       top: 0;
-       z-index: 999;
-       width: 100vw;
-       height: 70px;
-       background-color: var(--blue);
-       color: white;
-       animation: tip 4s forwards;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       font-size: 1.15em;
-      font-family: "Montserrat", sans-serif;
-      
-       white-space: no-wrap;
-       pointer-events: none;
-     }
-     @keyframes tip {
-       10% {
-         top: 60%;
-       }
-       15% {
-         top: 45%;
-       }
-       20% {
-         top: 55%;
-       }
-       25% {
-         top: 50%;
-       }
-       90% {
-         top: 50%;
-       }
-       100% {
-         top: 100%;
-       }
-     }
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 70px;
+  background-color: var(--blue);
+  color: white;
+  animation: tip 4s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.15em;
+  font-family: "Montserrat", sans-serif;
+
+  white-space: no-wrap;
+  pointer-events: none;
+}
+
+@keyframes tip {
+  10% {
+    top: 60%;
+  }
+
+  15% {
+    top: 45%;
+  }
+
+  20% {
+    top: 55%;
+  }
+
+  25% {
+    top: 50%;
+  }
+
+  90% {
+    top: 50%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
 
 @media only screen and (max-width: 900px) {
-  .h1 {
-    font-size: 40px;
-  }
-.contact__link{
-  display: none;
-}
-.contact__wrapper{
-  flex-wrap: wrap;
-}
-.contact__info--second{
-  display: none;
-}
   :root {
     --workMainWidth: 240px;
     --workWidth: 120px;
@@ -102,37 +102,66 @@
     --skillWidth: 150px;
     --skillHeight: 50px;
   }
+
+  .h1 {
+    font-size: 40px;
+  }
+
+  .contact__link {
+    display: none;
+  }
+
+  .contact__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .contact__info--second {
+    display: none;
+  }
+
+  .summary__wrapper--check {
+    align-self: center;
+  }
 }
+
+
 
 @media only screen and (max-width: 767px) {
   :root {
     --inputH: 40px;
   }
-  .nav{
+
+  .nav {
     transform: translateX(0);
   }
-  .onPerspective{
+
+  .onPerspective {
     display: none;
   }
+
   .img--me {
     display: none;
   }
+
   .img--me--small {
     display: block;
   }
+
   .works__work {
     display: none;
   }
+
   .works__work--main {
     display: flex;
   }
-  
+
 }
+
 @media only screen and (max-width: 480px) {
   .img--me--small {
     display: none;
   }
-  
+
 }
 
 @media only screen and (max-height: 480px) {
@@ -146,16 +175,16 @@
     line-height: 1.2;
   }
 }
+
 @media only screen and (max-width: 320px) {
   :root {
     --skillWidth: 100px;
     --skillSize: 33px;
   }
 }
+
 @media only screen and (max-height: 320px) {
   :root {
     --workMainWidth: 200px;
   }
 }
-
-
