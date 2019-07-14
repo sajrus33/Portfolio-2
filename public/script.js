@@ -52,7 +52,7 @@ const myDOM = {
     email: document.querySelector(".contact__input--email"),
     submit: document.querySelector(".contact__input--submit")
   },
-  check: document.querySelector(".contact__input--check"),
+  
   captcha: document.querySelector(".contact__cap"),
 
 
@@ -216,7 +216,7 @@ const myDOM = {
       myDOM.loadWorks(1);
     });
 
-    /* Verify anti bot, checkbox listener */
+    /* Verify anti bot, checkbox listener 
     myDOM.check.addEventListener("click", () => {
       console.log(myDOM.flag.checkedAntiBot);
       if (!myDOM.flag.checkedAntiBot) {
@@ -224,11 +224,14 @@ const myDOM = {
         myDOM.flag.checkedAntiBot = true;
       } else {
         event.preventDefault();
+
       }
     });
-
+*/
     /* Send Email, form submit listener */
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
+myDOM.mailForm.submit.addEventListener("touch", myDOM.sendEmail);
+  
   }
 };
 
