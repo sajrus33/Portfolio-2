@@ -17,12 +17,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script type="text/javascript">
     (function () {
       emailjs.init("user_tdJP5pQdemG5AhJpq5J7O");
     })();
-  </script>
+  </script> -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body class="flexRow">
@@ -239,7 +240,8 @@
 
             </div>
           </div>
-
+          <div class="g-recaptcha footer__cap" data-sitekey="6Lfflq0UAAAAAKIZSHv5KUqN8qMVRlgvAVFObet2"
+            data-size="invisible"></div>
           <input type="submit" value="Send message" class="contact__input contact__input--submit">
         </form>
         <div class="contact__aside flexCol">
@@ -271,14 +273,8 @@
   </nav>
 
 
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lfyla0UAAAAAHykY6MynIZglVC1QUiGlKe0lBOm"></script>
-  <script>
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6Lfyla0UAAAAAHykY6MynIZglVC1QUiGlKe0lBOm', { action: 'login' }).then(function (token) {
-
-      });
-    });
-  </script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   <script src="public/script.js"></script>
 </body>
 
