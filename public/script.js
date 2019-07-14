@@ -135,6 +135,7 @@ const myDOM = {
         to_name: "Brian W",
         message_html: String(message)
       };
+      console.log(newMessage);
       // send email with emailjs
       emailjs
         .send("sajrus33", "template_jvUkc7d6", newMessage)
