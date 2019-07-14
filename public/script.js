@@ -53,6 +53,8 @@ const myDOM = {
     submit: document.querySelector(".contact__input--submit")
   },
   check: document.querySelector(".contact__input--check"),
+  captcha: document.querySelector(".contact__cap"),
+
 
   flag: {
     checkedAntiBot: false
@@ -218,7 +220,7 @@ const myDOM = {
     myDOM.check.addEventListener("click", () => {
       console.log(myDOM.flag.checkedAntiBot);
       if (!myDOM.flag.checkedAntiBot) {
-        grecaptcha.reset();
+        myDOM.captcha.click();
         myDOM.flag.checkedAntiBot = true;
       } else {
         event.preventDefault();

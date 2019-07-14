@@ -172,6 +172,11 @@
 
 }
 
+.contact__cap {
+    position: fixed;
+    /* top: -100vh;
+    left: -100vw; */
+}
 
 .contact__aside {
     padding: 0 45px;
