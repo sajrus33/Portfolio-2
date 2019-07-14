@@ -50,8 +50,8 @@ const myDOM = {
     message: document.querySelector(".contact__input--message"),
     name: document.querySelector(".contact__input--name"),
     email: document.querySelector(".contact__input--email"),
-    submit: document.querySelector(".contact__input--submit"),
-    check: document.querySelector(".contact__input--check")
+    submit: document.querySelector(".contact__input--submit")
+    // check: document.querySelector(".contact__input--check")
 
   },
 
@@ -210,14 +210,14 @@ const myDOM = {
     });
 
     /* Verify anti bot, checkbox listener */
-    myDOM.mailForm.check.addEventListener("click", () => {
-      console.log(myDOM.flag.checkedAntiBot);
-      if (!myDOM.flag.checkedAntiBot) {
-        myDOM.flag.checkedAntiBot = true;
-      } else {
-        event.preventDefault();
-      }
-    });
+    // myDOM.mailForm.check.addEventListener("click", () => {
+    //   console.log(myDOM.flag.checkedAntiBot);
+    //   if (!myDOM.flag.checkedAntiBot) {
+    //     myDOM.flag.checkedAntiBot = true;
+    //   } else {
+    //     event.preventDefault();
+    //   }
+    // });
 
     /* Send Email, form submit listener */
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
