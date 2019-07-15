@@ -1,28 +1,59 @@
-"ue strict";
+"use strict";
 /** Works image sources */
 const worksSrc = [
   "public/img/works/web-flubmaster.png",
   "public/img/works/web-portfolio.png",
   "public/img/works/web-escape.png",
+  "public/img/works/web-avangarde.png",
+
   "public/img/works/app-maps.png",
   "public/img/works/app-todo.png",
-  "public/img/works/game-cards.png",
+
   "public/img/works/game-memory.png",
   "public/img/works/game-tower.png",
   "public/img/works/lib-circle.png"
+];
+const worksSrc150 = [
+  "public/img/works/150/web-flubmaster.png",
+  "public/img/works/150/web-portfolio.png",
+  "public/img/works/150/web-escape.png",
+  "public/img/works/150/web-avangarde.png",
+
+  "public/img/works/150/app-maps.png",
+  "public/img/works/150/app-todo.png",
+
+  "public/img/works/150/game-memory.png",
+  "public/img/works/150/game-tower.png",
+  "public/img/works/150/lib-circle.png"
 ];
 /* Works titles */
 const worksTitle = [
   "flubmaster",
   "portfolio",
   "escape",
+  "avangarde",
   "maps",
   "todo",
-  "cards",
   "memory",
-  "tower",
-  "circle"
+  "towers",
+  "circle.js"
 ];
+
+/* Works links */
+const worksLink = [
+  "https://sajrus33.github.io/web-flubmaster/",
+  "https://sajrus33.github.io/Portfolio/",
+  "https://sajrus33.github.io/web-escape/",
+  "https://sajrus33.github.io/avangarde/",
+
+  "https://sajrus33.github.io/app-maps/",
+  "https://sajrus33.github.io/app-todo/",
+
+  "https://sajrus33.github.io/game-memory-cards/",
+  "https://sajrus33.github.io/game-tower-defence/",
+  "https://github.com/sajrus33/lib-progress-circles"
+];
+
 /** @property myDOM 
  * @type DOM 
  * @description elements and listeners */
@@ -52,15 +83,16 @@ const myDOM = {
     email: document.querySelector(".contact__input--email"),
     submit: document.querySelector(".contact__input--submit")
   },
-  
   captcha: document.querySelector(".contact__cap"),
 
-
+  actualWork: 0,
   flag: {
     checkedAntiBot: false
   },
 
-  actualWork: 0,
+
+  /* MY ALERT */
+
   myAlert: (describe) => {
     const oldAlert = document.querySelector(".tip");
     if (oldAlert) {
@@ -71,16 +103,18 @@ const myDOM = {
     newAlert.innerText = String(describe);
     document.body.appendChild(newAlert);
   },
+
   /*  Function for works carousele, change works images display */
+
   loadWorks: (way = 0) => {
+
     myDOM.worksWork.forEach(work => {
       work.classList.remove("fadeIn");
-
-      work.classList.add("fadeIn");
       setTimeout(() => {
-        work.classList.remove("fadeIn");
-      }, 500);
+        work.classList.add("fadeIn");
+      }, 0);
     });
+
     myDOM.actualWork += way;
     const actual = myDOM.actualWork;
     const lastI = worksSrc.length - 1;
@@ -88,7 +122,6 @@ const myDOM = {
 
     const stdChange = () => {
       for (let i = 0; i < 3; i++) {
-        // console.log("kolejne", myDOM.actualWork + i);
         worksNew[i] = myDOM.actualWork + i;
       }
     };
@@ -117,11 +150,21 @@ const myDOM = {
         stdChange();
       }
     }
-    worksNew.forEach((workNew, i) => {
-      myDOM.worksImg[i].src = worksSrc[workNew];
-      myDOM.worksTitle[i].innerText = worksTitle[workNew];
-    });
+    setTimeout(() => {
+      worksNew.forEach((workNew, i) => {
+        if (i == 0 || i == 2) {
+          myDOM.worksImg[i].src = worksSrc150[workNew];
+        } else myDOM.worksImg[i].src = worksSrc[workNew];
+
+        myDOM.worksTitle[i].innerText = worksTitle[workNew];
+        myDOM.worksWork[i].href = worksLink[workNew];
+      });
+    }, 0);
+
   },
+
+  /* SEND EMAIL */
+
   sendEmail: () => {
     event.preventDefault();
     const name = myDOM.mailForm.name.value;
@@ -171,9 +214,13 @@ const myDOM = {
       // clean inputs values
     } else myDOM.myAlert("Please fill out all form positions");
   },
+
   /*    All listeners */
+
   listen: () => {
+
     /*    Hamburger ico click listener */
+
     myDOM.hamburger.addEventListener("click", () => {
 
       myDOM.noneTransition.classList.remove("noneTransition");
@@ -184,6 +231,7 @@ const myDOM = {
           link.classList.toggle("goInRight");
         }, ((i + 1) * 4) + "0");
       });
+
     });
 
     /*  Navigation links click listener */
@@ -206,6 +254,26 @@ const myDOM = {
       });
     });
 
+    /* SCROLL SECTIONS */
+    document.querySelector(".wrapper--perspective").addEventListener('wheel', (event) => {
+      var delta;
+
+      if (event.wheelDelta) {
+        delta = event.wheelDelta;
+      } else {
+        delta = -1 * event.deltaY;
+      }
+
+      if (delta < 0) {
+        console.log("DOWN");
+      } else if (delta > 0) {
+        console.log("UP");
+      }
+
+    });
+
+
+
     /*   Works carousel click listener */
 
     myDOM.worksPrevBtn.addEventListener("click", () => {
@@ -227,11 +295,13 @@ const myDOM = {
 
       }
     });
-*/
+    */
+
     /* Send Email, form submit listener */
+
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
-myDOM.mailForm.submit.addEventListener("touch", myDOM.sendEmail);
-  
+    myDOM.mailForm.submit.addEventListener("touch", myDOM.sendEmail);
+
   }
 };
 
@@ -244,6 +314,9 @@ const init = () => {
   myDOM.loadWorks();
 };
 window.addEventListener("load", init);
+
+
+
 
 
 
