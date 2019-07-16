@@ -110,9 +110,6 @@ const myDOM = {
 
     myDOM.worksWork.forEach(work => {
       work.classList.remove("fadeIn");
-      setTimeout(() => {
-        work.classList.add("fadeIn");
-      }, 0);
     });
 
     myDOM.actualWork += way;
@@ -150,17 +147,19 @@ const myDOM = {
         stdChange();
       }
     }
+
     setTimeout(() => {
       worksNew.forEach((workNew, i) => {
         if (i == 0 || i == 2) {
           myDOM.worksImg[i].src = worksSrc150[workNew];
         } else myDOM.worksImg[i].src = worksSrc[workNew];
-
         myDOM.worksTitle[i].innerText = worksTitle[workNew];
         myDOM.worksWork[i].href = worksLink[workNew];
       });
-    }, 0);
-
+      myDOM.worksWork.forEach(work => {
+        work.classList.add("fadeIn");
+      });
+    }, 100);
   },
 
   /* SEND EMAIL */
