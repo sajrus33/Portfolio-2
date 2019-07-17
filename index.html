@@ -53,7 +53,7 @@
         <img src="public/img/cover.png" alt="Brian Wala photography" class="img--me" />
         <img src="public/img/cover-small.png" alt="Brian Wala photography" class="img--me--small" />
       </section>
-      <div class="cover__options flexRow">
+      <div class="cover__options flexRow scrollable">
         <a class="cover__option" rel="noopener" target="_blank" href="https://sajrus33.github.io/Portfolio/">
           <h4 class="h4">Old portfolio</h4>
           <p class="cover__p">
@@ -85,21 +85,21 @@
         <h3 class="h3">Selected work</h3>
         <div class="works__slider flexRow">
           <div class="works__arrow works__arrow--prev"><i class="fas fa-arrow-left works__ico"></i></div>
-          <a href="#" class="works__work flexCol fadeIn">
+          <a href="#" class="works__work flexCol" rel="noopener" target="_blank">
             <div class="works__slide"><img src="public/img/works/web-flubmaster.png" alt="" class="img--slide"> </div>
 
 
 
             <p class="works__title">Flubmaster</p>
           </a>
-          <a href="#" class="works__work works__work--main flexCol fadeIn">
+          <a href="#" class="works__work works__work--main flexCol" rel="noopener" target="_blank">
             <div class="works__slide works__slide--main"><img src="public/img/works/web-portfolio.png" alt=""
                 class="img--slide"> </div>
 
 
             <p class="works__title">Avangarde</p>
           </a>
-          <a href="#" class="works__work flexCol fadeIn">
+          <a href="#" class="works__work flexCol" rel="noopener" target="_blank">
             <div class="works__slide"><img src="public/img/works/web-escape.png" alt="" class="img--slide"> </div>
 
 
@@ -168,7 +168,7 @@
       <section class="flexCol skills__section">
         <h3 class="h3 skills__h3">My skills</h3>
         <p class="skills__legend">
-          <i class="fas fa-star skills__star"></i> 1 Year,&nbsp;&nbsp;&nbsp;
+          <i class="fas fa-star skills__star"></i> Over 1 year,&nbsp;&nbsp;&nbsp;
           <i class="fas fa-star skills__star skills__star--half"></i>Up to half year
         </p>
         <div class="flexRow skills__wrapper">
@@ -222,8 +222,8 @@
     <!-- S5 -->
     <section class="wrapper flexCol contact__section displayNone">
       <h3 class="h3 contact__h3">Send me a message</h3>
-      <div class="contact__wrapper flexRow">
-        <form action="" class="contact__form flexCol">
+      <div class="contact__wrapper flexRow scrollable">
+        <form action="#" class="contact__form flexCol">
           <div class="contact__wrapper--message">
             <textarea id="message" placeholder="" class="contact__input contact__input--message" required></textarea>
             <label for="message" class="contact__label">Message:</label>
@@ -242,14 +242,6 @@
           </div>
           <div class="g-recaptcha summary__wrapper--check" data-sitekey="6Ldl36cUAAAAAAi9pVMBzgOW0lQ9LRKJDiUFxq5w">
           </div>
-
-          <!-- <div class="flexRow summary__wrapper--check">
-            <label for="check" class="summary__label--check">
-              <input class="summary__check contact__input--check" type="checkbox" id="check">
-              <span class="summary__mark"></span>
-              Anti bot verify.
-            </label>
-          </div> -->
           <input type="submit" value="Send message" class="contact__input contact__input--submit">
         </form>
         <div class="contact__aside flexCol">
@@ -283,7 +275,7 @@
 
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-  <script type="text/javascript">
+  <script>
     (function () {
       // emailjs.init("user_taieuIEWO6i7Qk3POZmUy");
       emailjs.init("user_tdJP5pQdemG5AhJpq5J7O");

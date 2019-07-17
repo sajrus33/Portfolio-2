@@ -256,6 +256,7 @@ const myDOM = {
     /* SCROLL SECTIONS */
     document.querySelector(".wrapper--perspective").addEventListener('wheel', (event) => {
       var delta;
+      console.log(event.target, event.target.classList.contains("scrollable"));
 
       if (event.wheelDelta) {
         delta = event.wheelDelta;
@@ -268,7 +269,6 @@ const myDOM = {
       } else if (delta > 0) {
         console.log("UP");
       }
-
     });
 
 
