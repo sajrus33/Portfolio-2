@@ -186,11 +186,6 @@ const myDOM = {
           response => {
             // console.log(response)
             myDOM.myAlert("Message has been sent");
-            myDOM.flag.checkedAntiBot = false;
-            myDOM.check.click();
-            myDOM.flag.checkedAntiBot = false;
-
-            grecaptcha.reset();
 
             for (let property in myDOM.mailForm) {
               if (myDOM.mailForm.hasOwnProperty(property)) {
@@ -212,6 +207,8 @@ const myDOM = {
         );
       // clean inputs values
     } else myDOM.myAlert("Please fill out all form positions");
+    grecaptcha.reset();
+
   },
 
   /*    All listeners */
