@@ -6,6 +6,7 @@ const worksSrc = [
   "public/img/works/web-escape.png",
   "public/img/works/web-avangarde.png",
 
+  "public/img/works/app-air.png",
   "public/img/works/app-maps.png",
   "public/img/works/app-todo.png",
 
@@ -13,12 +14,14 @@ const worksSrc = [
   "public/img/works/game-tower.png",
   "public/img/works/lib-circle.png"
 ];
+
 const worksSrc150 = [
   "public/img/works/150/web-flubmaster.png",
   "public/img/works/150/web-portfolio.png",
   "public/img/works/150/web-escape.png",
   "public/img/works/150/web-avangarde.png",
 
+  "public/img/works/150/app-air.png",
   "public/img/works/150/app-maps.png",
   "public/img/works/150/app-todo.png",
 
@@ -32,6 +35,7 @@ const worksTitle = [
   "portfolio",
   "escape",
   "avangarde",
+  "air-quality",
   "maps",
   "todo",
   "memory",
@@ -46,6 +50,8 @@ const worksLink = [
   "https://sajrus33.github.io/web-escape/",
   "https://sajrus33.github.io/avangarde/",
 
+
+  "https://sajrus33.github.io/App-air-pollution/",
   "https://sajrus33.github.io/app-maps/",
   "https://sajrus33.github.io/app-todo/",
 
@@ -63,6 +69,7 @@ const myDOM = {
   noneTransition: document.querySelector(".noneTransition"),
 
   headerBtn: document.querySelector(".header__button"),
+  coverBtn: document.querySelector(".cover__button"),
 
   hamburger: document.querySelector(".header__hamb"),
   nav: document.querySelector(".nav"),
@@ -233,7 +240,8 @@ const myDOM = {
     /*  Navigation links click listener */
 
     myDOM.navLinks.forEach((link, linkI) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
+
         myDOM.navLinks.forEach(linke => {
           linke.classList.remove("onMark");
         });
@@ -246,27 +254,36 @@ const myDOM = {
             wrapper.classList.remove("displayNone");
           }
         });
+
         myDOM.hamburger.click();
+
       });
     });
 
-    /* SCROLL SECTIONS */
-    document.querySelector(".wrapper--perspective").addEventListener('wheel', (event) => {
-      var delta;
-      console.log(event.target, event.target.classList.contains("scrollable"));
+    /*  Cover button click listener */
 
-      if (event.wheelDelta) {
-        delta = event.wheelDelta;
-      } else {
-        delta = -1 * event.deltaY;
-      }
+    myDOM.coverBtn.addEventListener("click", () => {
+      myDOM.navLinks[myDOM.navLinks.length - 1].click();
+      myDOM.hamburger.click();
 
-      if (delta < 0) {
-        console.log("DOWN");
-      } else if (delta > 0) {
-        console.log("UP");
-      }
     });
+
+    /* SCROLL SECTIONS */
+    // document.querySelector(".wrapper--perspective").addEventListener('wheel', (event) => {
+    //   var delta;
+
+    //   if (event.wheelDelta) {
+    //     delta = event.wheelDelta;
+    //   } else {
+    //     delta = -1 * event.deltaY;
+    //   }
+
+    //   if (delta < 0) {
+    //     console.log("DOWN");
+    //   } else if (delta > 0) {
+    //     console.log("UP");
+    //   }
+    // });
 
 
 
@@ -288,7 +305,6 @@ const myDOM = {
         myDOM.flag.checkedAntiBot = true;
       } else {
         event.preventDefault();
-
       }
     });
     */
