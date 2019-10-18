@@ -268,25 +268,6 @@ const myDOM = {
 
     });
 
-    /* SCROLL SECTIONS */
-    // document.querySelector(".wrapper--perspective").addEventListener('wheel', (event) => {
-    //   var delta;
-
-    //   if (event.wheelDelta) {
-    //     delta = event.wheelDelta;
-    //   } else {
-    //     delta = -1 * event.deltaY;
-    //   }
-
-    //   if (delta < 0) {
-    //     console.log("DOWN");
-    //   } else if (delta > 0) {
-    //     console.log("UP");
-    //   }
-    // });
-
-
-
     /*   Works carousel click listener */
 
     myDOM.worksPrevBtn.addEventListener("click", () => {
@@ -297,19 +278,7 @@ const myDOM = {
       myDOM.loadWorks(1);
     });
 
-    /* Verify anti bot, checkbox listener 
-    myDOM.check.addEventListener("click", () => {
-      console.log(myDOM.flag.checkedAntiBot);
-      if (!myDOM.flag.checkedAntiBot) {
-        myDOM.captcha.click();
-        myDOM.flag.checkedAntiBot = true;
-      } else {
-        event.preventDefault();
-      }
-    });
-    */
-
-    /* Send Email, form submit listener */
+    s    /* Send Email, form submit listener */
 
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
     myDOM.mailForm.submit.addEventListener("touch", myDOM.sendEmail);
