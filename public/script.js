@@ -278,7 +278,7 @@ const myDOM = {
       myDOM.loadWorks(1);
     });
 
-    s    /* Send Email, form submit listener */
+    /* Send Email, form submit listener */
 
     myDOM.mailForm.submit.addEventListener("click", myDOM.sendEmail);
     myDOM.mailForm.submit.addEventListener("touch", myDOM.sendEmail);
