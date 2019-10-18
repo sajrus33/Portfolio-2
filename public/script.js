@@ -185,13 +185,11 @@ const myDOM = {
         to_name: "Brian W",
         message_html: String(message)
       };
-      console.log(newMessage);
       // send email with emailjs
       emailjs
         .send("brianwala22_gmail_com", "template_gqc9FdOP", newMessage)
         .then(
           response => {
-            // console.log(response)
             myDOM.myAlert("Message has been sent");
 
             for (let property in myDOM.mailForm) {
